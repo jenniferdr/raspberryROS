@@ -21,28 +21,96 @@
 using namespace cv;
 using namespace std;
 
-/* Valor HSV de la pelota (Hue, Saturation y Value) */
-int iLowH = 0;
-int iHighH = 30; // Color especifico a buscar
+namespace detectorPelota{
 
-int iLowS = 70; 
-int iHighS = 231;
+  /* Valor HSV del color */
 
-int iLowV = 101;
-int iHighV = 255;
+  // Matiz
+  int matizInf = 0;
+  int matizSup = 30; 
 
-void crearControlesPelota();
-Mat filtrarPelota(Mat imgHSV);
+  // Saturacion
+  int satInf = 70; 
+  int satSup = 231;
+
+  // Valor
+  int valInf = 101;
+  int valSup = 255;
+
+  double posX;
+  double posY;
+
+  void obtenerPosicion(double &x, double &y){
+    x = posX;
+    y = posY;
+  }
+
+  Mat filtrarPelota(Mat imgOriginal){
+
+    Mat imgHSV;
+    cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
+
+    Mat imgFiltrada;
+    inRange(imgHSV, Scalar(matizInf, satInf, valInf),
+	    Scalar(matizSup, satSup, valSup), imgFiltrada);
+    
+    //morphological opening (removes small objects from the foreground)
+    erode(imgFiltrada, imgFiltrada,
+	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+    dilate( imgFiltrada,imgFiltrada,
+	    getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+  
+    //morphological closing (removes small holes from the foreground)
+    dilate( imgFiltrada, imgFiltrada, 
+	    getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
+    erode(imgFiltrada, imgFiltrada,
+	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
+
+    return imgFiltrada;
+  }
+
+
+  bool esVisible(Mat imgOriginal){
+  
+    Mat imgPelota = filtrarPelota(imgOriginal);
+    Moments pMomentos = moments(imgPelota);
+    double dArea = pMomentos.m00;
+
+    if(dArea > 10000){ 
+      posX = pMomentos.m01 / dArea;
+      posY = pMomentos.m10 / dArea;
+      return true;
+    }else{ 
+      return false;
+    }
+  }
+
+  void crearControlesPelota(){
+    // Crea una nueva ventana
+    namedWindow("HSV Pelota",CV_WINDOW_AUTOSIZE); 
+  
+    // Crear un control para cambiar el Matiz (0 - 179)
+    createTrackbar("MatizInf", "HSV Pelota", &matizInf, 179);
+    createTrackbar("MatizSup","HSV Pelota", &matizSup, 179);
+    
+    // Crear un control para cambiar la saturacion (0-255)
+    createTrackbar("SaturacionInf", "HSV Pelota", &satInf, 255);
+    createTrackbar("SaturacionSup", "HSV Pelota", &satSup, 255);
+    
+    // Crear un control para cambiar el valor (0-255)
+    createTrackbar("ValorInf","HSV Pelota", &valInf, 255);
+    createTrackbar("ValorSup","HSV Pelota", &valSup, 255);
+  }
+}
+
 
 int main (int argc, char ** argv) {
  
-  /*
-    ros::init(argc, argv, "test_srv");
+  /*ros::init(argc, argv, "test_srv");
     ros::NodeHandle n;
     ros::ServiceClient client = n.serviceClient<rosserial_arduino::Test>("moverRobot");
     rosserial_arduino::Test srv;
   */
-
   // capturar la camara en vivo. Camara 0 
   RaspiCamCvCapture * camara = raspiCamCvCreateCameraCapture(0);
   
@@ -73,21 +141,10 @@ int main (int argc, char ** argv) {
     line(imgLines, horizonIni, horizonFin, cvScalar(0,255,0), 1);
     line(imgLines, verticalIni,verticalFin, cvScalar(0,255,0), 1);
 
-    //Convertir el cuadro de BGR a HSV
-    Mat imgHSV;
-    cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
- 
-    Mat imgPelota = filtrarPelota(imgHSV); 
-
-    Moments pMomentos = moments(imgPelota);
-    double dM01 = pMomentos.m01;
-    double dM10 = pMomentos.m10;
-    double dArea = pMomentos.m00;
-    
-    if (dArea > 10000){
-      
-      int posX = dM10 / dArea;
-      int posY = dM01 / dArea;
+    if (detectorPelota::esVisible(imgOriginal)){
+      double posX;
+      double posY;
+      detectorPelota::obtenerPosicion(posX,posY);
       
       circle(imgLines,Point2f(posX,posY),50,Scalar(255,0,0),1,CV_AA,0);
       
@@ -123,44 +180,8 @@ int main (int argc, char ** argv) {
   
 }
 
-void crearControlesPelota(){
-// Crea una nueva ventana
-  namedWindow("HSV Pelota",CV_WINDOW_AUTOSIZE); 
-  
-  // Crear un control para cambiar la HUE (0 - 179)
-  createTrackbar("LowH", "HSV Pelota", &iLowH, 179);
-  createTrackbar("HighH","HSV Pelota", &iHighH, 179);
-    
-  // Crear un control para cambiar la saturacion (0-255)
-  createTrackbar("LowS", "HSV Pelota", &iLowS, 255);
-  createTrackbar("HighS", "HSV Pelota", &iHighS, 255);
-    
-  // Crear un control para cambiar el valor (0-255)
-  createTrackbar("LowV","HSV Pelota", &iLowV, 255);
-  createTrackbar("HighV","HSV Pelota", &iHighV, 255);
-}
 
 
-Mat filtrarPelota(Mat imgHSV){
 
-  Mat imgFiltrada;
-
-  inRange(imgHSV, Scalar(iLowH, iLowS, iLowV),
-	  Scalar(iHighH, iHighS, iHighV), imgFiltrada);
-    
-  //morphological opening (removes small objects from the foreground)
-  erode(imgFiltrada, imgFiltrada,
-	getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-  dilate( imgFiltrada,imgFiltrada,
-	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
-  
-  //morphological closing (removes small holes from the foreground)
-  dilate( imgFiltrada, imgFiltrada, 
-	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
-  erode(imgFiltrada, imgFiltrada,
-	getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-
-  return imgFiltrada;
-}
 
 
