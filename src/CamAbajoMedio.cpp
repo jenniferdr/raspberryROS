@@ -81,7 +81,6 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
   }
   // Alcanzó el numero max de giros sin encontrar pelota
   
-  std::cout << "peteooooo";
   return false;
 }
 
@@ -112,7 +111,7 @@ bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
     return true;
 
   } else {
-    std:: cout << " no la vi en camara 1"; 
+    std:: cout << " no la vi en camara 1 " << std::endln; 
     CamArribaMedio cam_arriba_medio;
     return cam_arriba_medio.ubicarPelota();
   }
