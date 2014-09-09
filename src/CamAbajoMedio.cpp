@@ -10,6 +10,7 @@
 
 #include "CamAbajoMedio.hpp"
 #include "CamArribaMedio.hpp"
+
 CamAbajoMedio::CamAbajoMedio(){
 
   Arbotix::peticion("camAbajoMedio");  // Definir camAbajoMedio

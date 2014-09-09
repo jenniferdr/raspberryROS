@@ -10,7 +10,15 @@ namespace Camara{
   }
 
   cv::Mat obtenerImagen(){
-    return raspiCamCvQueryFrame(camara);
+    cv::Mat imagen;
+    int t = 0 ;
+    while (t < 10){
+      imagen =raspiCamCvQueryFrame(camara); 
+      imshow ("sera?", imagen);
+      cv::waitKey(10);
+      t++;
+    }
+    return imagen;
 
      /*if (!camara.isOpened()) {
     cout << "No se pudo abrir la camara" << endl;

@@ -21,10 +21,10 @@
 #include "Camara.hpp"
 #include "Arbotix.hpp"
 
-#ifndef H_CamDerechaAbajo
-#define H_CamDerechaAbajo
+#ifndef H_CamDerechaArriba
+#define H_CamDerechaArriba
 
-class CamDerechaAbajo{
+class CamDerechaArriba{
 
 private:
 
@@ -33,7 +33,7 @@ private:
 public:
   
 
-  CamDerechaAbajo();
+  CamDerechaArriba();
   void mostrarImagen();
 
 

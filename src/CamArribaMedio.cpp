@@ -6,6 +6,7 @@
 */
 
 #include "CamArribaMedio.hpp"
+#include "CamArribaArribaMedio.hpp"
  
 CamArribaMedio::CamArribaMedio(){
 
@@ -64,8 +65,8 @@ bool CamArribaMedio::ubicarPelota(){
     return true;
 
   } else {
-    //CamArribaMedio camArriba = new CamArribaMedio();
-    return false/*camArriba.ubicarPelota()*/;
+    CamArribaArribaMedio camSiguiente;
+    return camSiguiente.ubicarPelota();
   }
 
 }
