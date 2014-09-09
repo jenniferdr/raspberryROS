@@ -24,7 +24,7 @@
 #ifndef H_CamArribaArribaMedio
 #define H_CamArribaArribaMedio
 
-class CamCamArribaArribaMedio{
+class CamArribaArribaMedio{
 
 private:
 
@@ -33,7 +33,7 @@ private:
 public:
   
 
-  CamCamArribaArribaMedio();
+  CamArribaArribaMedio();
   void mostrarImagen();
 
 

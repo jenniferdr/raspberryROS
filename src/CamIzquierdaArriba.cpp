@@ -20,8 +20,8 @@ bool CamIzquierdaArriba::ubicarPelota(){
 
   } else {
     // Pasar a la siguiente clase
-    CamAbajoMedio camSiguiente;
-    return camSiguiente.ubicarPelota();
+    //CamAbajoMedio camSiguiente;
+    return false;// camSiguiente.ubicarPelota();
   }
 
 }
