@@ -9,7 +9,7 @@
 */
 
 #include "CamAbajoMedio.hpp"
- 
+#include "CamArribaMedio.hpp"
 CamAbajoMedio::CamAbajoMedio(){
 
   Arbotix::peticion("camAbajoMedio");  // Definir camAbajoMedio
@@ -87,9 +87,9 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
 bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
-
+  this->enZonaPateo = false;
   if (detectorPelota::esVisible(this->imgOriginal)){
-    this->enZonaPateo = false;
+   
     switch (cuadrantePelota()){ 
     case 1: Arbotix::peticion("w");
       break;
@@ -111,8 +111,9 @@ bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
     return true;
 
   } else {
-    //CamArribaMedio camArriba = new CamArribaMedio();
-    return false/*camArriba.ubicarPelota()*/;
+    std:: cout << " no la vi en camara 1"; 
+    CamArribaMedio cam_arriba_medio;
+    return cam_arriba_medio.ubicarPelota();
   }
 
 }

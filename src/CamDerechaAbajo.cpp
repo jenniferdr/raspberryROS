@@ -8,21 +8,21 @@
  * 7 Derecha-Inferior
 */
 
-#include "CamAbajoMedio.hpp"
+#include "CamDerechaAbajo.hpp"
  
 CamDerechaAbajo::CamDerechaAbajo(){
 
-  Arbotix::peticion("camDerechaAbajo");  // Definir camAbajoMedio
+  Arbotix::peticion("camDerechaAbajo");
   this->imgOriginal = Camara::obtenerImagen();
   
 }
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamAbajoMedio::ubicarPelota(){
+bool CamDerechaAbajo::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
-    
+    std::cout << "estoy en CamDerechaAbajo";
     Arbotix::peticion("d");
     return true;
 
