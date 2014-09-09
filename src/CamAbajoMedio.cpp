@@ -9,6 +9,7 @@
 */
 
 #include "CamAbajoMedio.hpp"
+#include "CamArribaMedio.hpp"
  
 CamAbajoMedio::CamAbajoMedio(){
 
@@ -111,8 +112,9 @@ bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
     return true;
 
   } else {
-    //CamArribaMedio camArriba = new CamArribaMedio();
-    return false/*camArriba.ubicarPelota()*/;
+    CamArribaMedio camSiguiente;
+    //return false
+	camSiguiente.ubicarPelota();
   }
 
 }

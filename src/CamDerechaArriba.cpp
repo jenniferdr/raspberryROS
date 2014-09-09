@@ -1,17 +1,17 @@
 
-#include "CamDerechaAbajo.hpp"
-#include "CamDerechaMedio.hpp"
+#include "CamDerechaArriba.hpp"
+#include "CamIzquierdaAbajo.hpp"
  
-CamDerechaAbajo::CamDerechaAbajo(){
+CamDerechaArriba::CamDerechaArriba(){
 
-  Arbotix::peticion("camDerechaAbajo");  // Definir camAbajoMedio
+  Arbotix::peticion("camDerechaArriba");  // Definir camAbajoMedio
   this->imgOriginal = Camara::obtenerImagen();
   
 }
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamDerechaAbajo::ubicarPelota(){
+bool CamDerechaArriba::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
@@ -20,7 +20,7 @@ bool CamDerechaAbajo::ubicarPelota(){
 
   } else {
     // Pasar a la siguiente clase
-    CamDerechaMedio camSiguiente;
+    CamIzquierdaAbajo camSiguiente;
     //return false/*
 	camSiguiente.ubicarPelota();
   }
