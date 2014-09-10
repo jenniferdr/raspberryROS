@@ -134,9 +134,8 @@ include_directories(
 SET(RASPICAM_CV $ENV{HOME}/git/robidouille/raspicam_cv)
 SET(USERLAND $ENV{HOME}/git/raspberrypi/userland)
 #SET(CVBLOB $ENV{HOME}/cvblob/lib/libcvblob.so)
-#SET(WIRINGPI /usr/local/lib/libwiringPi.so.2.0)
 
-include_directories(${RASPICAM_CV})
+include_directories(${RASPICAM_CV} /home/pi/catkin_wsJ/src/humanoide/ )
 include_directories(/usr/local/include)
 
 SET(MMAL_LIBS
@@ -151,6 +150,14 @@ SET(DISPLAY_CAMERA_LIBS
     ${RASPICAM_CV}/libraspicamcv.a
     ${MMAL_LIBS} ${BCM_LIBS} ${OpenCV_LIBS} )
 
-add_executable(servicetest src/detectar.cpp)
-target_link_libraries(servicetest ${catkin_LIBRARIES}  ${DISPLAY_CAMERA_LIBS})
+
+add_executable(servicetest src/detectar.cpp src/detectorPelota.cpp src/Camara.cpp src/Arbotix.cpp 
+               src/estadosCamara/CamAbajoMedio.cpp src/estadosCamara/CamArribaArribaMedio.cpp 
+               src/estadosCamara/CamDerechaAbajo.cpp src/estadosCamara/CamDerechaMedio.cpp 
+               src/estadosCamara/CamDerechaArriba.cpp  src/estadosCamara/CamArribaMedio.cpp 
+               src/estadosCamara/CamIzquierdaAbajo.cpp src/estadosCamara/CamIzquierdaMedio.cpp 
+               src/estadosCamara/CamIzquierdaArriba.cpp )
+
+target_link_libraries(servicetest ${catkin_LIBRARIES}  ${DISPLAY_CAMERA_LIBS} ${LD_LIBRARY_PATH} ${OpenCV_LIBS})
+
 #add_dependencies(servicetest beginner_tutorials_generate_messages_cpp)
