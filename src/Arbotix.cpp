@@ -8,6 +8,7 @@ namespace Arbotix{
     ros::NodeHandle n;
     client= n.serviceClient<rosserial_arduino::Test>("moverRobot");
   }
+// Intentar Arbotix::client
 
   bool peticion(std::string pet){
     rosserial_arduino::Test srv;
