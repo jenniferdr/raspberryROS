@@ -24,17 +24,16 @@ using namespace cv;
 using namespace std;
 
 
-
 int main (int argc, char ** argv) {
  
   //detectorPelota::crearControlesPelota();
 
   ros::init(argc, argv, "test_srv");
-  Arbotix::iniciarServicio();
   ros::NodeHandle n;
-  ros::ServiceClient client;
-  client = n.serviceClient<rosserial_arduino::Test>("moverRobot");
-  
+  ros::ServiceClient cliente;
+  cliente = n.serviceClient<rosserial_arduino::Test>("moverRobot");
+  Arbotix::iniciarServicio(&cliente);
+
   Camara::iniciarCamara();
   
   CamAbajoMedio pitazo;

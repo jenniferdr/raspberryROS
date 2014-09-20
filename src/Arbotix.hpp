@@ -6,7 +6,7 @@
 
 namespace Arbotix{
  
-  void iniciarServicio();
+  void iniciarServicio(ros::ServiceClient *cliente);
 
   bool peticion(std::string pet);
 }

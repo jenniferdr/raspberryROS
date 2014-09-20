@@ -1,19 +1,19 @@
 #include "Arbotix.hpp"
 
 namespace Arbotix{
-  ros::ServiceClient client;
+  ros::ServiceClient *client;
  
-  void iniciarServicio(){
+  void iniciarServicio(ros::ServiceClient *cliente){
     //ros::init(argc, argv, "test_srv");
     ros::NodeHandle n;
-    client= n.serviceClient<rosserial_arduino::Test>("moverRobot");
+    client= cliente;
   }
 
   bool peticion(std::string pet){
     rosserial_arduino::Test srv;
     srv.request.input = pet;
     std::cout << srv.request.input ;
-    if (client.call(srv)){
+    if (client->call(srv)){
       ROS_INFO("Sum: %s", srv.response.output.c_str());
       std::cout << " true" << std::endl ; 
       return true;
