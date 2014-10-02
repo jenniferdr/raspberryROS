@@ -70,7 +70,7 @@ private:
 public:
   
 
-   CamAbajoMedio();
+  CamAbajoMedio();
   void mostrarImagen();
 
   bool irZonaPateo(bool &pateoDerecha);

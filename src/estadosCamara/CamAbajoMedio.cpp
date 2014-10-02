@@ -13,7 +13,7 @@
 
 CamAbajoMedio::CamAbajoMedio(){
 
-  Arbotix::peticion("camAbajoMedio");  // Definir camAbajoMedio
+  Arbotix::peticion("r");  
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
   this->enZonaPateo = false;
@@ -72,21 +72,27 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
 
   while(vuelta < maxGiros){
     bool pelotaAlaVista = ubicarPelota(pateoDerecha); // OJO
-    this->imgOriginal = Camara::obtenerImagen();    
     if(pelotaAlaVista && this->enZonaPateo) return true;
+
+    Arbotix::peticion("r"); // Mover camara abajo-medio
+    this->imgOriginal = Camara::obtenerImagen();
+    mostrarImagen();
+
     if(! pelotaAlaVista) {
       vuelta++;
       Arbotix:: peticion("a");
     }
   }
+
   // Alcanzó el numero max de giros sin encontrar pelota
-  
-  std::cout << "peteooooo";
   return false;
 }
 
-// Devuelve true si ubicó la pelota en alguna camara
-// Devuelve false si no la vio en ninguna camara 
+/* Devuelve true si vio la pelota en cualquier posicion 
+ * de la camara
+ * Devuelve false si no la vio en ninguna posicion
+ * de camara
+ */ 
 bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
   this->enZonaPateo = false;
   if (detectorPelota::esVisible(this->imgOriginal)){

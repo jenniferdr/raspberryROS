@@ -10,8 +10,7 @@
  
 CamArribaMedio::CamArribaMedio(){
 
-
-  Arbotix::peticion("camArribaMedio");
+  Arbotix::peticion("y");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
   

@@ -4,9 +4,14 @@
  
 CamIzquierdaAbajo::CamIzquierdaAbajo(){
 
-  Arbotix::peticion("camIzquierdaAbajo");  // Definir camAbajoMedio
+  Arbotix::peticion("p");  // Definir camAbajoMedio
   this->imgOriginal = Camara::obtenerImagen();
-  
+  mostrarImagen();
+}
+
+void CamIzquierdaAbajo::mostrarImagen(){
+  imshow("Original", this->imgOriginal);
+  cv::waitKey(10);
 }
 
 // Devuelve true si ubicó la pelota en alguna camara
