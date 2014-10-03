@@ -3,10 +3,17 @@
  
 CamArribaArribaMedio::CamArribaArribaMedio(){
 
-  Arbotix::peticion("camArribaArribaMedio");  // Definir camAbajoMedio
+  Arbotix::peticion("t");  // Definir camAbajoMedio
   this->imgOriginal = Camara::obtenerImagen();
+  mostrarImagen();
   
 }
+
+void CamArribaArribaMedio::mostrarImagen(){
+  imshow("Original", this->imgOriginal);
+  cv::waitKey(10);
+}
+
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
