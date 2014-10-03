@@ -1,6 +1,6 @@
 
 #include "Camara.hpp"
-
+#include "detectorPelota.hpp"
 namespace Camara{
   RaspiCamCvCapture *camara;
   
@@ -12,8 +12,12 @@ namespace Camara{
   cv::Mat obtenerImagen(){
     cv::Mat imagen;
     int t = 0 ;
+    int posX,posY;
     while (t < 10){
-      imagen =raspiCamCvQueryFrame(camara); 
+      
+      imagen =raspiCamCvQueryFrame(camara);
+      detectorPelota::obtenerPosicion(posX,posY);
+      circle(imagen,cv::Point2f(posX,posY), 20,cv::Scalar(255,0,0),1,CV_AA,0);
       imshow ("sera?", imagen);
       cv::waitKey(10);
       t++;
