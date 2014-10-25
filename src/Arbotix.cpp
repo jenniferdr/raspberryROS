@@ -18,9 +18,6 @@ namespace Arbotix{
     srv.request.input = pet;
     std::cout << srv.request.input ;
     
-      std::cout << " voy a hacer el slepp" << std::endl ; 
-    sleep(4);
-      std::cout << " sali del sleep :)" << std::endl ;
     if (client->call(srv)){
       
       ROS_INFO("Sum: %s", srv.response.output.c_str());

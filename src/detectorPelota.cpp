@@ -9,15 +9,15 @@ namespace detectorPelota{
 
   // Matiz
   int matizInf = 0;
-  int matizSup = 30; 
+  int matizSup = 49; 
 
   // Saturacion
-  int satInf = 70; 
-  int satSup = 231;
+  int satInf = 132; 
+  int satSup = 255;
 
   // Valor
-  int valInf = 101;
-  int valSup = 255;
+  int valInf = 78;
+  int valSup = 165;
 
   int posX;
   int posY;
@@ -60,6 +60,7 @@ namespace detectorPelota{
     if(dArea > 10000){ 
       posY = pMomentos.m01 / dArea;
       posX = pMomentos.m10 / dArea;
+    
       std::cout << "posicion pelota: " << posX << " " << posY << std::endl;
       return true;
     }else{ 
