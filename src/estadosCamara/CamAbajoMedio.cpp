@@ -1,11 +1,9 @@
 //Secciones de la camara 
-/* 1 Arriba-Medio
- * 2 Derecha-Arriba
- * 3 Izquierda-Arriba
- * 4 Izquierda-Inferior
- * 5 Izquierda-Inferior-Patada
- * 6 Derecha-Inferior-Patada
- * 7 Derecha-Inferior
+/* 1 Zona de pateo izquierda
+ * 2 Zona de pateo derecha
+ * 3 central
+ * 4 Izquierda
+ * 5 Derecha
 */
 
 #include "CamAbajoMedio.hpp"
@@ -73,7 +71,12 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
 
   while(vuelta < maxGiros){
     bool pelotaAlaVista = ubicarPelota(pateoDerecha); // OJO
-    if(pelotaAlaVista && this->enZonaPateo) return true;
+    if(pelotaAlaVista && this->enZonaPateo){
+      // Llegamos a la meta, tomar recompensa
+      int estado = pateoDerecha ? 2 : 1 ;
+      AprendizajeQ::actualizarValor(estado);
+      return true;
+    }
 
     Arbotix::peticion("r"); // Mover camara abajo-medio
     this->imgOriginal = Camara::obtenerImagen();
