@@ -10,6 +10,7 @@
 
 #include "CamAbajoMedio.hpp"
 #include "CamArribaMedio.hpp"
+#include "AprendizajeQ.hpp"
 
 CamAbajoMedio::CamAbajoMedio(){
 
@@ -80,6 +81,9 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
 
     if(! pelotaAlaVista) {
       vuelta++;
+      // Estado 14: no la vió 
+      AprendijajeQ::actualizarValor(14);
+      AprendizajeQ::tomarAccion(14);
       Arbotix:: peticion("a");
     }
   }
@@ -96,24 +100,15 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
 bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
   this->enZonaPateo = false;
   if (detectorPelota::esVisible(this->imgOriginal)){
-   
-    switch (cuadrantePelota()){ 
-    case 1: Arbotix::peticion("w");
-      break;
-    case 2: Arbotix::peticion("d");
-      break;
-    case 3: Arbotix::peticion("a");
-      break;
-    case 4: Arbotix::peticion("a");
-      break;
-    case 5: pateoDerecha = false;
-      this->enZonaPateo = true ;
-      break;
-    case 6: pateoDerecha = true;
-      this->enZonaPateo = true ;
-      break;
-    case 7: Arbotix::peticion("d");
-      break;
+    int estado = cuadrantePelota();
+
+    AprendijajeQ::actualizarValor(estado);
+    if (estado == 1 or estado == 2){
+      this->enzonaPateo = true;
+      if(estado==1) pateoDerecha = false;
+      if(estado==2) pateoDerecha = true;
+    }else{
+      AprendizajeQ::tomarAccion(estado);
     }
     return true;
 
@@ -129,15 +124,15 @@ int CamAbajoMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 1; 
+    return 4; 
   }else if(estaEnMedioArriba()){
-    return 2;
-  }else if(estaEnDerecha()){
     return 3;
-  }else if(estaEnPateoIzquierda()){
-    return 4;
-  }else if(estaEnPateoDerecha()){
+  }else if(estaEnDerecha()){
     return 5;
+  }else if(estaEnPateoIzquierda()){
+    return 1;
+  }else if(estaEnPateoDerecha()){
+    return 2;
   }
 }
 

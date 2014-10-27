@@ -3,6 +3,7 @@
 #include "detectorPelota.hpp"
 #include "Camara.hpp"
 #include "Arbotix.hpp"
+#include "AprendizajeQ.hpp"
 #include "estadosCamara/CamAbajoMedio.hpp"
 using namespace cv;
 using namespace std;
@@ -19,7 +20,9 @@ int main (int argc, char ** argv) {
   Arbotix::iniciarServicio(&cliente);
 
   Camara::iniciarCamara();
-  
+  //inicializar valores Q
+  AprendijajeQ::leerValores();
+
   CamAbajoMedio pitazo;
   bool pateoDerecha;
   if (pitazo.irZonaPateo(pateoDerecha)){
@@ -35,6 +38,8 @@ int main (int argc, char ** argv) {
     cout << "frieguense todos"; 
   }
   
+  //respaldar valores Q en archivo
+  AprendizajeQ::escribirValores();
   cv::waitKey(10000);
   return 0;
   
