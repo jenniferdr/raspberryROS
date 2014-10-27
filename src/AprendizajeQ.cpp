@@ -28,10 +28,16 @@
 namespace AprendizajeQ {
 
   // estado anterior	
-  int estadoViejo ;
+	int estadoViejo = 0 ; // por defecto
   // accion anterior es -1 si es la primera vez
+<<<<<<< HEAD
+  int accion = -1;
+	
+	int Q[NUM_ESTADOS][NUM_ACCION];
+=======
   int accion = -1;	
   int Q[NUM_ESTADOS][NUM_ACCION];
+>>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
 
   // Funciones privadas 
   int distancia (int estado);
@@ -50,24 +56,30 @@ namespace AprendizajeQ {
    * Matriz : Q[14][7]
    */
   void leerValores(){
-		
+	
     std::ifstream entrada("tabla.txt");
-    std::string linea;
+	
+	std::string linea;
     char* separar = NULL;
-		
+	
     for (int j = 0 ; j < NUM_ESTADOS; j++){
-      
+    
       getline(entrada, linea);
-			
+	  
       char* aux = new char[linea.length() + 1];
       strcpy(aux, linea.c_str());
-      separar = strtok(aux, " ");
-			
+	  
+	  separar = strtok(aux, " ");
+
       for (int i = 0 ; i < NUM_ACCION  ; i++)
-	{
-	  Q[j][i]= atof(separar);
-	  separar = strtok (NULL, " ");
-	}
+	  {
+		  
+		  Q[j][i]= atof(separar);
+		  
+		  separar = strtok (NULL, " ");
+		  std:: cout << "separar" << separar<< std::endl;	  				
+	  }
+	  std:: cout << "por aqui" << j << std::endl;	  				
     }
   }
 
@@ -152,16 +164,21 @@ namespace AprendizajeQ {
    * @Parametros: estadoViejo: Estado anterior 
    *              estadoNuevo: Estado Actual  
    */
+<<<<<<< HEAD
+  double recompensa(int estadoViejo , int estadoNuevo){
+    double R;
+=======
   int recompensa(int estadoViejo ,int estadoNuevo){
     int R;
+>>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
     int dV = distancia(estadoViejo);
     int dN = distancia(estadoNuevo);
     if (dV < dN)
       // Castigo
-      R = -( dN / 10);
+      R = -( dN/10);
     else
       // Premio
-      R = 1 / dN;
+		R = 1/dN;
     return R;
   }
 
@@ -173,7 +190,7 @@ namespace AprendizajeQ {
    */
 	
   int maxQ(int estado){
-    int max = 0 ;
+    int max = 0 ; 
     for(int i = 0; i < NUM_ACCION; i++ ){
       if (Q[estado][i] > max)
 	max = Q[estado][i];
