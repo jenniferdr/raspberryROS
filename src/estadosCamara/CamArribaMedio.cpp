@@ -7,7 +7,7 @@
 
 #include "CamArribaMedio.hpp"
 #include "CamDerechaAbajo.hpp"
-#include "AprendizajeQ.hpp"
+#include "../AprendizajeQ.hpp"
  
 CamArribaMedio::CamArribaMedio(){
   Arbotix::peticion("y");

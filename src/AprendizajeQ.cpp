@@ -1,6 +1,6 @@
 
 #include "AprendizajeQ.hpp"
-//#include "Arbotix.hpp"
+#include "Arbotix.hpp"
 
 /*
  * Aprendizaje por Reforzamiento
@@ -17,19 +17,22 @@
  */
 
 #define K 1.0
+#define Y 0.6
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
 #define PRECISION 4
+
+
 namespace AprendizajeQ {
 
-	// estado anterior	
-	int estadoViejo = 0 ; // por defecto
-	// accion anterior es -1 si es la primera vez
-	int accion = 4;	
-	float Q[NUM_ESTADOS][NUM_ACCION];
-	float distancia (int estado);
-	int maxQ(int estado);
-	float recompensa(int estadoViejo ,int estadoNuevo);
+  // estado anterior	
+  int estadoViejo = 0 ; // por defecto
+  // accion anterior es -1 si es la primera vez
+  int accion = -1;	
+  float Q[NUM_ESTADOS][NUM_ACCION];
+  float distancia (int estado);
+  int maxQ(int estado);
+  float recompensa(int estadoViejo ,int estadoNuevo);
 	
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
@@ -45,8 +48,8 @@ namespace AprendizajeQ {
   void leerValores(){
 	
     std::ifstream entrada;
-	entrada.open("tabla.txt", std::ios_base::binary);
-	std::string linea;
+    entrada.open("tabla.txt", std::ios_base::binary);
+    std::string linea;
     char* separar = NULL;
 	
     for (int j = 0 ; j < NUM_ESTADOS; j++){
@@ -56,16 +59,16 @@ namespace AprendizajeQ {
       char* aux = new char[linea.length() + 1];
       strcpy(aux, linea.c_str());
 	   
-	  separar = strtok(aux, " ");
+      separar = strtok(aux, " ");
 
       for (int i = 0 ; i < NUM_ACCION  ; i++)
-	  {
+	{
 		  
-		  Q[j][i] = atof(separar);
-//		  printf ("es cosa de impresion??%f" , Q[j][i] );
-  		  separar = strtok (NULL, " ");
+	  Q[j][i] = atof(separar);
+	  // printf ("es cosa de impresion??%f" , Q[j][i] );
+	  separar = strtok (NULL, " ");
 		 
-	  }
+	}
 	  
     }
   }
@@ -84,27 +87,27 @@ namespace AprendizajeQ {
    * Matriz : Q[14][7]
    */
 	
-	void escribirValores(){
-		std::string linea;
+  void escribirValores(){
+    std::string linea;
 		
-		std::ofstream salida ;
-		salida.open("tabla.txt", std::ios_base::binary);
-		if (salida.is_open())
-		{
+    std::ofstream salida ;
+    salida.open("tabla.txt", std::ios_base::binary);
+    if (salida.is_open())
+      {
 	
 			
-			for (int i = 0 ; i < NUM_ESTADOS; i++){
-				for (int j = 0 ; j < NUM_ACCION ; j++ )
-					salida << std::fixed << std::setprecision(PRECISION)
-						   << Q[i][j] << " ";
+	for (int i = 0 ; i < NUM_ESTADOS; i++){
+	  for (int j = 0 ; j < NUM_ACCION ; j++ )
+	    salida << std::fixed << std::setprecision(PRECISION)
+		   << Q[i][j] << " ";
 	
-				salida << std::endl;
-			}
-			
-			salida.close();
-		}
-		else std::cout << "No abri el archivo ";
+	  salida << std::endl;
 	}
+			
+	salida.close();
+      }
+    else std::cout << "No abri el archivo ";
+  }
 	
   /*
    * @Descripcion: Actualiza el estado anterior con el nuevo VALUE que posee en
@@ -114,7 +117,7 @@ namespace AprendizajeQ {
   void actualizarValor(int estado){
 	 	  
     if (accion != -1)
-      Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + maxQ(estado);
+      Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + Y*maxQ(estado);
 	
 	
   }
@@ -127,10 +130,10 @@ namespace AprendizajeQ {
    *
    */
   void tomarAccion(int estado){
-// LA constante K debe variar si es < a 1 favorece a la exploracion
-	  // si es > 1 favorece la explotacion
-	  // si es = 1 todo queda igual
-	  float k = K;
+    // LA constante K debe variar si es < a 1 favorece a la exploracion
+    // si es > 1 favorece la explotacion
+    // si es = 1 todo queda igual
+    float k = K;
     float aux[NUM_ACCION];
     float suma = 0.0 ;
 
@@ -138,21 +141,23 @@ namespace AprendizajeQ {
       suma += pow(k , Q[estado][i]); 
 	
     for(int i = 0 ; i < NUM_ACCION; i++)
-		aux[i] = (pow(k , Q[estado][i]))/suma;
+      aux[i] = (pow(k , Q[estado][i]))/suma;
 	
-	float max = 0;
+    float max = 0;
 		
     for(int i = 0; i < NUM_ACCION; i++ ){
-		if (aux[i] > max){
-			max = aux[i];
-			accion = i;
-		}
+      if (aux[i] > max){
+	max = aux[i];
+	accion = i;
+      }
     }
 
     estadoViejo = estado;
-    //std::string peticion = std::to_string(accion);
+    char* peticion;
+    sprintf(peticion,"%d",estado);
+    std::cout << "ENVIAR PETICION CON ESTADOOOOOOO" << std::endl << std::endl;
     // VERIFICAR SI ES ASI DE VERDAD
-    //		Arbotix::peticion(peticion);  
+    Arbotix::peticion(peticion);  
 	
   }
   /*
@@ -174,7 +179,7 @@ namespace AprendizajeQ {
       R = -( dN/10);
     else
       // Premio
-		R = 1/dN;
+      R = 1/dN;
     return R;
   }
 
@@ -194,19 +199,19 @@ namespace AprendizajeQ {
     return max;
   }
 
-	/*
-	 * @Descripcion: Asigna una distancia segun el estado actual
-	 * la asignacion viene dada por :
-	 * e1 , e2 = 1
-	 * e3 = 2
-	 * e4 , e5 = 3 
-	 * e6 = 6
-	 * e7 = 8
-	 * e8 , e9 = 9
-	 * e10 , e11 = 10
-	 * e12 , e13 = 7
-	 * @Parametros: estado: estado actual
-	 */
+  /*
+   * @Descripcion: Asigna una distancia segun el estado actual
+   * la asignacion viene dada por :
+   * e1 , e2 = 1
+   * e3 = 2
+   * e4 , e5 = 3 
+   * e6 = 6
+   * e7 = 8
+   * e8 , e9 = 9
+   * e10 , e11 = 10
+   * e12 , e13 = 7
+   * @Parametros: estado: estado actual
+   */
 	
   float distancia (int estado){
     switch (estado){

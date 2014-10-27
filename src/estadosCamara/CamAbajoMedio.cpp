@@ -8,7 +8,7 @@
 
 #include "CamAbajoMedio.hpp"
 #include "CamArribaMedio.hpp"
-#include "AprendizajeQ.hpp"
+#include "../AprendizajeQ.hpp"
 
 CamAbajoMedio::CamAbajoMedio(){
 
@@ -85,7 +85,7 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
     if(! pelotaAlaVista) {
       vuelta++;
       // Estado 14: no la vió 
-      AprendijajeQ::actualizarValor(14);
+      AprendizajeQ::actualizarValor(14);
       AprendizajeQ::tomarAccion(14);
       Arbotix:: peticion("a");
     }
@@ -105,9 +105,9 @@ bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
   if (detectorPelota::esVisible(this->imgOriginal)){
     int estado = cuadrantePelota();
 
-    AprendijajeQ::actualizarValor(estado);
+    AprendizajeQ::actualizarValor(estado);
     if (estado == 1 or estado == 2){
-      this->enzonaPateo = true;
+      this->enZonaPateo = true;
       if(estado==1) pateoDerecha = false;
       if(estado==2) pateoDerecha = true;
     }else{

@@ -1,6 +1,6 @@
 #include "CamDerechaArriba.hpp"
 #include "CamIzquierdaArriba.hpp"
-#include "AprendijajeQ.hpp"
+#include "../AprendizajeQ.hpp"
  
 CamIzquierdaArriba::CamIzquierdaArriba(){
   Arbotix::peticion("f");

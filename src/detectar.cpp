@@ -12,6 +12,7 @@ using namespace std;
 int main (int argc, char ** argv) {
  
   //detectorPelota::crearControlesPelota();
+  std::cout << "HEY SOY EL NUEVO CODIGO";
 
   ros::init(argc, argv, "test_srv");
   ros::NodeHandle n;
@@ -21,7 +22,7 @@ int main (int argc, char ** argv) {
 
   Camara::iniciarCamara();
   //inicializar valores Q
-  AprendijajeQ::leerValores();
+  AprendizajeQ::leerValores();
 
   CamAbajoMedio pitazo;
   bool pateoDerecha;

@@ -1,5 +1,5 @@
 #include "CamDerechaArriba.hpp"
-#include "AprendizajeQ.hpp"
+#include "../AprendizajeQ.hpp"
  
 CamDerechaArriba::CamDerechaArriba(){
   // Cambiar posicion de la cámara
@@ -19,7 +19,7 @@ bool CamDerechaArriba::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
-    AprendijajeQ::actualizarValor(11);
+    AprendizajeQ::actualizarValor(11);
     AprendizajeQ::tomarAccion(11);
 
     return true;
