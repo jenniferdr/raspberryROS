@@ -1,14 +1,14 @@
 all: main
 
-main: aprendizajeQ.o  main.o
+main: AprendizajeQ.o  main.o
 
-	g++ -std=c++11 -O2 -o main aprendizajeQ.o main.o 
+	g++ -std=c++11 -O2 -o main AprendizajeQ.o main.o 
 
-aprendizajeQ.o: aprendizajeQ.cpp aprendizajeQ.hpp
+aprendizajeQ.o: AprendizajeQ.cpp AprendizajeQ.hpp
 
-	g++ -std=c++11 -O2 -c aprendizajeQ.cpp
+	g++ -std=c++11 -O2 -c AprendizajeQ.cpp
 
-main.o: main.cpp aprendizajeQ.hpp
+main.o: main.cpp AprendizajeQ.hpp
 
 	g++ -std=c++11 -O2 -c main.cpp
 

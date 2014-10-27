@@ -1,4 +1,4 @@
-#include "aprendizajeQ.hpp"
+#include "AprendizajeQ.hpp"
 
 //#include "Arbotix.hpp"
 
@@ -12,8 +12,8 @@ namespace AprendizajeQ {
   int Q[NUM_ESTADOS][NUM_ACCION];
 
   /*
-   * Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
-   * Parametros: Ninguno 
+   * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
+   * @Parametros: Ninguno 
    * Formato del Archivo:
    * a0 a1 a2 a3 a4 a5 a6 [ e1 ]
    * a0 a1 a2 a3 ...      [ e2 ]
@@ -46,9 +46,9 @@ namespace AprendizajeQ {
 
 	
   /*
-   * Descripcion: Funcion que escribe en el archivo salida.txt los
+   * @Descripcion: Funcion que escribe en el archivo salida.txt los
    * valores Aprendidos
-   * Parametros: Ninguno 
+   * @Parametros: Ninguno 
    * Formato del Archivo:
    * a0 a1 a2 a3 a4 a5 a6 [ e1 ]
    * a0 a1 a2 a3 ...      [ e2 ]
@@ -111,7 +111,7 @@ namespace AprendizajeQ {
       accion = i;
     }
     estadoViejo = estado;
-    std::string peticion = std::to_string(accion);
+    //std::string peticion = std::to_string(accion);
     // VERIFICAR SI ES ASI DE VERDAD
     //		Arbotix::peticion(peticion);  
 		
@@ -154,6 +154,19 @@ namespace AprendizajeQ {
     return max;
   }
 
+	/*
+	 * @Descripcion: Asigna una distancia segun el estado actual
+	 * la asignacion viene dada por :
+	 * e1 , e2 = 1
+	 * e3 = 2
+	 * e4 , e5 = 3 
+	 * e6 = 6
+	 * e7 = 8
+	 * e8 , e9 = 9
+	 * e10 , e11 = 10
+	 * e12 , e13 = 7
+	 * @Parametros: estado: estado actual
+	 */
 	
   int distancia (int estado){
     switch (estado){

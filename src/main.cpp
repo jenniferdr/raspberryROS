@@ -1,4 +1,4 @@
-#include "aprendizajeQ.hpp"
+#include "AprendizajeQ.hpp"
 
 int main(){
 
