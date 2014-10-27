@@ -41,7 +41,6 @@ int main (int argc, char ** argv) {
   
   //respaldar valores Q en archivo
   AprendizajeQ::escribirValores();
-  cv::waitKey(10000);
   return 0;
   
 }
