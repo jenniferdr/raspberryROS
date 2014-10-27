@@ -6,8 +6,8 @@
 namespace AprendizajeQ {
 
 /*
- * Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
- * Parametros: Ninguno 
+ * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
+ * @Parametros: Ninguno 
  * Formato del Archivo:
  * a0 a1 a2 a3 a4 a5 a6 [ e1 ]
  * a0 a1 a2 a3 ...      [ e2 ]
@@ -32,17 +32,17 @@ namespace AprendizajeQ {
 			
 			for (int i = 0 ; i < NUM_ACCION  ; i++)
 			{
-	    Q[j][i]= atof(separar);
-	    separar = strtok (NULL, " ");
+				Q[j][i]= atof(separar);
+				separar = strtok (NULL, " ");
 			}
 		}
 	}
 
 	
 /*
- * Descripcion: Funcion que escribe en el archivo salida.txt los
+ * @Descripcion: Funcion que escribe en el archivo salida.txt los
  * valores Aprendidos
- * Parametros: Ninguno 
+ * @Parametros: Ninguno 
  * Formato del Archivo:
  * a0 a1 a2 a3 a4 a5 a6 [ e1 ]
  * a0 a1 a2 a3 ...      [ e2 ]
@@ -59,16 +59,16 @@ namespace AprendizajeQ {
 		{
 			for (int i = 0 ; i < NUM_ESTADOS; i++){
 				//for (int j = 0 ; j < NUM_ACCION ; j++ )
-					//	salida << Q[i][j] ;
-					//salida << std::endl;
-				
+				//	salida << Q[i][j] ;
+				//salida << std::endl;
+				std::cout << "ver que pasa";
 			}
 			
 			salida.close();
 		}
 		else std::cout << "No abri el archivo ";
 	}
-
+	
 	/*
 	 * @Descripcion: Actualiza el estado anterior con el nuevo VALUE que posee en
 	 * la tabla Q-learning
@@ -148,7 +148,19 @@ namespace AprendizajeQ {
 		return max;
 	}
 
-	
+	/*
+	 * @Descripcion: Asigna una distancia segun el estado actual
+	 * la asignacion viene dada por :
+	 * e1 , e2 = 1
+	 * e3 = 2
+	 * e4 , e5 = 3 
+	 * e6 = 6
+	 * e7 = 8
+	 * e8 , e9 = 9
+	 * e10 , e11 = 10
+	 * e12 , e13 = 7
+	 * @Parametros: estado: estado actual
+	 */
 	int distancia (int estado){
 		switch (estado){
 		case 1:
