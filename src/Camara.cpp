@@ -1,4 +1,3 @@
-
 #include "Camara.hpp"
 #include "detectorPelota.hpp"
 namespace Camara{
