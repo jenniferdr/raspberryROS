@@ -1,15 +1,48 @@
 #include "AprendizajeQ.hpp"
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
 
 //#include "Arbotix.hpp"
 
+/*
+ * Aprendizaje por Reforzamiento
+ * Las recompensas se definen de [0-1]
+ * Los Castigos se defien de [0-1]
+ * Las Acciones se definen de la siguiente manera:
+ * a0 = caminar poco
+ * a1 = caminar
+ * a2 = caminar mucho
+ * a3 = girar derecha
+ * a4 = girar izquierda
+ * a5 = girar poco derecha
+ * a6 = girar poco izquierda
+ */
+
+#define K 1
+#define NUM_ESTADOS 14
+#define NUM_ACCION 7
 namespace AprendizajeQ {
 
   // estado anterior	
 	int estadoViejo = 0 ; // por defecto
   // accion anterior es -1 si es la primera vez
+<<<<<<< HEAD
   int accion = -1;
 	
 	int Q[NUM_ESTADOS][NUM_ACCION];
+=======
+  int accion = -1;	
+  int Q[NUM_ESTADOS][NUM_ACCION];
+>>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
+
+  // Funciones privadas 
+  int distancia (int estado);
+  int maxQ(int estado);
+  int recompensa(int estadoViejo ,int estadoNuevo);
 
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
@@ -131,8 +164,13 @@ namespace AprendizajeQ {
    * @Parametros: estadoViejo: Estado anterior 
    *              estadoNuevo: Estado Actual  
    */
+<<<<<<< HEAD
   double recompensa(int estadoViejo , int estadoNuevo){
     double R;
+=======
+  int recompensa(int estadoViejo ,int estadoNuevo){
+    int R;
+>>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
     int dV = distancia(estadoViejo);
     int dN = distancia(estadoNuevo);
     if (dV < dN)
