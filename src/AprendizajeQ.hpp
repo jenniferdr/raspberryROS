@@ -1,4 +1,4 @@
-
+#include <iomanip> 
 #include <stdio.h>
 #include <iostream>
 #include <fstream>
@@ -16,9 +16,5 @@ namespace AprendizajeQ {
 
   void tomarAccion(int estado);
   void actualizarValor(int estado);
-	int distancia (int estado);
-	int maxQ(int estado);
-	double recompensa(int estadoViejo ,int estadoNuevo);
 }
-
 #endif

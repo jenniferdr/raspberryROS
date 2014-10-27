@@ -16,17 +16,20 @@
  * a6 = girar poco izquierda
  */
 
-#define K 1
+#define K 1.0
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
+#define PRECISION 4
 namespace AprendizajeQ {
 
-  // estado anterior	
+	// estado anterior	
 	int estadoViejo = 0 ; // por defecto
-  // accion anterior es -1 si es la primera vez
-  int accion = -1;	
-  int Q[NUM_ESTADOS][NUM_ACCION];
-
+	// accion anterior es -1 si es la primera vez
+	int accion = 4;	
+	float Q[NUM_ESTADOS][NUM_ACCION];
+	float distancia (int estado);
+	int maxQ(int estado);
+	float recompensa(int estadoViejo ,int estadoNuevo);
 	
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
@@ -41,29 +44,29 @@ namespace AprendizajeQ {
    */
   void leerValores(){
 	
-    std::ifstream entrada("tabla.txt");
-	
+    std::ifstream entrada;
+	entrada.open("tabla.txt", std::ios_base::binary);
 	std::string linea;
     char* separar = NULL;
 	
     for (int j = 0 ; j < NUM_ESTADOS; j++){
     
       getline(entrada, linea);
-	  
+
       char* aux = new char[linea.length() + 1];
       strcpy(aux, linea.c_str());
-	  
+	   
 	  separar = strtok(aux, " ");
 
       for (int i = 0 ; i < NUM_ACCION  ; i++)
 	  {
 		  
-		  Q[j][i]= atof(separar);
-		  
-		  separar = strtok (NULL, " ");
-		  std:: cout << "separar" << separar<< std::endl;	  				
+		  Q[j][i] = atof(separar);
+//		  printf ("es cosa de impresion??%f" , Q[j][i] );
+  		  separar = strtok (NULL, " ");
+		 
 	  }
-	  std:: cout << "por aqui" << j << std::endl;	  				
+	  
     }
   }
 
@@ -81,31 +84,39 @@ namespace AprendizajeQ {
    * Matriz : Q[14][7]
    */
 	
-  void escribirValores(void){
-    std::string linea;
-    std::ifstream salida ("salida.txt");
-    if (salida.is_open())
-      {
-	for (int i = 0 ; i < NUM_ESTADOS; i++){
-	  //for (int j = 0 ; j < NUM_ACCION ; j++ )
-	  //	salida << Q[i][j] ;
-	  //salida << std::endl;
-				
-	}
+	void escribirValores(){
+		std::string linea;
+		
+		std::ofstream salida ;
+		salida.open("tabla.txt", std::ios_base::binary);
+		if (salida.is_open())
+		{
+	
 			
-	salida.close();
-      }
-    else std::cout << "No abri el archivo ";
-  }
-
+			for (int i = 0 ; i < NUM_ESTADOS; i++){
+				for (int j = 0 ; j < NUM_ACCION ; j++ )
+					salida << std::fixed << std::setprecision(PRECISION)
+						   << Q[i][j] << " ";
+	
+				salida << std::endl;
+			}
+			
+			salida.close();
+		}
+		else std::cout << "No abri el archivo ";
+	}
+	
   /*
    * @Descripcion: Actualiza el estado anterior con el nuevo VALUE que posee en
    * la tabla Q-learning
    * @Parametros: estado: estado actual 
    */
   void actualizarValor(int estado){
+	 	  
     if (accion != -1)
       Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + maxQ(estado);
+	
+	
   }
   /*
    * @Descripcion: Dada la funcion de probabilidad
@@ -116,28 +127,33 @@ namespace AprendizajeQ {
    *
    */
   void tomarAccion(int estado){
-    int k = K;
-    int aux[NUM_ACCION];
-    int suma;
-		
+// LA constante K debe variar si es < a 1 favorece a la exploracion
+	  // si es > 1 favorece la explotacion
+	  // si es = 1 todo queda igual
+	  float k = K;
+    float aux[NUM_ACCION];
+    float suma = 0.0 ;
+
     for (int i = 0; i < NUM_ACCION; i++)
       suma += pow(k , Q[estado][i]); 
-		
+	
     for(int i = 0 ; i < NUM_ACCION; i++)
-      aux[i] = (pow(k , Q[estado][i]))/suma;
-		
-    int max = 0;
+		aux[i] = (pow(k , Q[estado][i]))/suma;
+	
+	float max = 0;
 		
     for(int i = 0; i < NUM_ACCION; i++ ){
-      if (aux[i] > max)
-	max = aux[i];
-      accion = i;
+		if (aux[i] > max){
+			max = aux[i];
+			accion = i;
+		}
     }
+
     estadoViejo = estado;
     //std::string peticion = std::to_string(accion);
     // VERIFICAR SI ES ASI DE VERDAD
     //		Arbotix::peticion(peticion);  
-		
+	
   }
   /*
    * @Descripcion: Dado el estado anterior y el actual se otorga un recompensa
@@ -149,10 +165,10 @@ namespace AprendizajeQ {
    *              estadoNuevo: Estado Actual  
    */
 
-  double recompensa(int estadoViejo , int estadoNuevo){
-    double R;
-    int dV = distancia(estadoViejo);
-    int dN = distancia(estadoNuevo);
+  float recompensa(int estadoViejo , int estadoNuevo){
+    float R;
+    float dV = distancia(estadoViejo);
+    float dN = distancia(estadoNuevo);
     if (dV < dN)
       // Castigo
       R = -( dN/10);
@@ -192,36 +208,36 @@ namespace AprendizajeQ {
 	 * @Parametros: estado: estado actual
 	 */
 	
-  int distancia (int estado){
+  float distancia (int estado){
     switch (estado){
     case 1:
     case 2:
-      return 1;
+      return 1.0;
       break;
     case 3:
-      return 2;
+      return 2.0;
       break;
     case 4:
     case 5:
-      return 3;
+      return 3.0;
       break;
     case 6:
-      return 6;
+      return 6.0;
       break;
     case 7:
-      return 8;
+      return 8.0;
       break;
     case 8:
     case 9:
-      return 9;
+      return 9.0;
       break;
     case 10:
     case 11:
-      return 10;
+      return 10.0;
       break;
     case 12:
     case 13:
-      return 7;
+      return 7.0;
       break;
     } 
   }
