@@ -25,24 +25,17 @@
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
 namespace AprendizajeQ {
-
-    // estado anterior	
-	int estadoViejo ;
-	// accion anterior es -1 si es la primera vez
-	int accion = -1;
 	
-	int Q[NUM_ESTADOS][NUM_ACCION];
+  void leerValores();
+  void escribirValores();
 	
-	void leerValores();
-	void escribirValores();
+  void tomarAccion(int);
 	
-	void tomarAccion(int);
+  void actualizarValor(int);
 	
-	void actualizarValor(int);
-	
-	int recompensa(int,int);
-	int distancia(int);
-	int maxQ(int);
+  int recompensa(int,int);
+  int distancia(int);
+  int maxQ(int);
 }
 
 #endif
