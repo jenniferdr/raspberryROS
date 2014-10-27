@@ -1,3 +1,11 @@
+
+#include <stdio.h>
+#include <iostream>
+#include <fstream>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+
 #ifndef APRENDIZAJEQ
 #define APRENDIZAJEQ
 
@@ -5,20 +13,12 @@ namespace AprendizajeQ {
 
   void leerValores();
   void escribirValores();
-<<<<<<< HEAD
-	
-  void tomarAccion(int);
-	
-  void actualizarValor(int);
-	
-  double recompensa(int,int);
-  int distancia(int);
-  int maxQ(int);
-=======
 
   void tomarAccion(int estado);
   void actualizarValor(int estado);
->>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
+	int distancia (int estado);
+	int maxQ(int estado);
+	double recompensa(int estadoViejo ,int estadoNuevo);
 }
 
 #endif

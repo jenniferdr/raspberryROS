@@ -1,11 +1,5 @@
-#include "AprendizajeQ.hpp"
-#include <stdio.h>
-#include <iostream>
-#include <fstream>
-#include <string.h>
-#include <stdlib.h>
-#include <math.h>
 
+#include "AprendizajeQ.hpp"
 //#include "Arbotix.hpp"
 
 /*
@@ -30,20 +24,10 @@ namespace AprendizajeQ {
   // estado anterior	
 	int estadoViejo = 0 ; // por defecto
   // accion anterior es -1 si es la primera vez
-<<<<<<< HEAD
-  int accion = -1;
-	
-	int Q[NUM_ESTADOS][NUM_ACCION];
-=======
   int accion = -1;	
   int Q[NUM_ESTADOS][NUM_ACCION];
->>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
 
-  // Funciones privadas 
-  int distancia (int estado);
-  int maxQ(int estado);
-  int recompensa(int estadoViejo ,int estadoNuevo);
-
+	
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
    * @Parametros: Ninguno 
@@ -164,13 +148,9 @@ namespace AprendizajeQ {
    * @Parametros: estadoViejo: Estado anterior 
    *              estadoNuevo: Estado Actual  
    */
-<<<<<<< HEAD
+
   double recompensa(int estadoViejo , int estadoNuevo){
     double R;
-=======
-  int recompensa(int estadoViejo ,int estadoNuevo){
-    int R;
->>>>>>> 8d75b3f7671a2ca5506671da96f2d5e0549daa7f
     int dV = distancia(estadoViejo);
     int dN = distancia(estadoNuevo);
     if (dV < dN)
