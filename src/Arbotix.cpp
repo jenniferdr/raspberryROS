@@ -8,6 +8,7 @@ namespace Arbotix{
     ros::NodeHandle n;
     client= cliente;
   }
+// Intentar Arbotix::client
 
   bool peticion(std::string pet){
     peticionesHechas = peticionesHechas + 1;
