@@ -33,7 +33,7 @@ namespace AprendizajeQ {
 	
   void actualizarValor(int);
 	
-  int recompensa(int,int);
+  double recompensa(int,int);
   int distancia(int);
   int maxQ(int);
 }
