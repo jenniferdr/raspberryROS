@@ -1,15 +1,15 @@
 //Secciones de la camara 
-/* 1 Arriba-Medio
- * 2 Abajo- Medio
- * 3 Izquierda
- * 4 Derecha
+/* 6 Abajo
+ * 7 central
+ * 8 Izquierda
+ * 9 Derecha
 */
 
 #include "CamArribaMedio.hpp"
-#include "CamArribaArribaMedio.hpp"
+#include "CamDerechaAbajo.hpp"
+#include "../AprendizajeQ.hpp"
  
 CamArribaMedio::CamArribaMedio(){
-
   Arbotix::peticion("y");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
@@ -51,20 +51,13 @@ void CamArribaMedio::mostrarImagen(){
 bool CamArribaMedio::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
-    switch (cuadrantePelota()){ 
-    case 1: Arbotix::peticion("w");
-      break;
-    case 2: Arbotix::peticion("camAbajoMedio");
-      break;
-    case 3: Arbotix::peticion("a");
-      break;
-    case 4: Arbotix::peticion("d");
-      break;
-    }
+    int estado = cuadrantePelota();
+    AprendizajeQ::actualizarValor(estado);
+    AprendizajeQ::tomarAccion(estado);
     return true;
 
   } else {
-    CamArribaArribaMedio camSiguiente;
+    CamDerechaAbajo camSiguiente;
     return camSiguiente.ubicarPelota();
   }
 
@@ -74,17 +67,17 @@ int CamArribaMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 3; 
-  }else if(estaEnMedioArriba()){
-    return 1;
+    return 8; 
+  }else if(estaEnCentro()){
+    return 7;
   }else if(estaEnDerecha()){
-    return 4;
-  }else if(estaEnAbajoMedio()){
-    return 2;
+    return 9;
+  }else if(estaEnAbajo()){
+    return 6;
   }
 }
 
-bool CamArribaMedio::estaEnMedioArriba(){
+bool CamArribaMedio::estaEnCentro(){
   
   if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
@@ -112,7 +105,7 @@ bool CamArribaMedio::estaEnIzquierda(){
 }
 
 
-bool CamArribaMedio::estaEnAbajoMedio(){
+bool CamArribaMedio::estaEnAbajo(){
   
   if (this->posY > horizontalIni.y ){
 

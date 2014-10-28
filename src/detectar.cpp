@@ -3,6 +3,7 @@
 #include "detectorPelota.hpp"
 #include "Camara.hpp"
 #include "Arbotix.hpp"
+#include "AprendizajeQ.hpp"
 #include "estadosCamara/CamAbajoMedio.hpp"
 using namespace cv;
 using namespace std;
@@ -11,6 +12,7 @@ using namespace std;
 int main (int argc, char ** argv) {
  
   //detectorPelota::crearControlesPelota();
+  std::cout << "HEY SOY EL NUEVO CODIGO";
 
   ros::init(argc, argv, "test_srv");
   ros::NodeHandle n;
@@ -19,7 +21,9 @@ int main (int argc, char ** argv) {
   Arbotix::iniciarServicio(&cliente);
 
   Camara::iniciarCamara();
-  
+  //inicializar valores Q
+  AprendizajeQ::leerValores();
+
   CamAbajoMedio pitazo;
   bool pateoDerecha;
   if (pitazo.irZonaPateo(pateoDerecha)){
@@ -35,7 +39,8 @@ int main (int argc, char ** argv) {
     cout << "frieguense todos"; 
   }
   
-  cv::waitKey(10000);
+  //respaldar valores Q en archivo
+  AprendizajeQ::escribirValores();
   return 0;
   
 }

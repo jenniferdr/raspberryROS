@@ -1,10 +1,9 @@
-
-#include "CamAbajoMedio.hpp"
+#include "CamDerechaArriba.hpp"
 #include "CamIzquierdaArriba.hpp"
+#include "../AprendizajeQ.hpp"
  
 CamIzquierdaArriba::CamIzquierdaArriba(){
-
-  Arbotix::peticion("f");  // Definir camAbajoMedio
+  Arbotix::peticion("f");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
@@ -20,13 +19,14 @@ bool CamIzquierdaArriba::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
-    Arbotix::peticion("a");
+    AprendizajeQ::actualizarValor(10);
+    AprendizajeQ::tomarAccion(10);
     return true;
 
   } else {
     // Pasar a la siguiente clase
-    //CamAbajoMedio camSiguiente;
-    return false;// camSiguiente.ubicarPelota();
+    CamDerechaArriba camSiguiente;
+    return camSiguiente.ubicarPelota();
   }
 
 }
