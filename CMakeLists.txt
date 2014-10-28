@@ -42,7 +42,7 @@ SET(DISPLAY_CAMERA_LIBS
     ${MMAL_LIBS} ${BCM_LIBS} ${OpenCV_LIBS} )
 
 
-add_executable(servicetest src/detectar.cpp src/detectorPelota.cpp src/Camara.cpp src/Arbotix.cpp
+add_executable(servicetest2 src/detectar.cpp src/detectorPelota.cpp src/Camara.cpp src/Arbotix.cpp
                src/AprendizajeQ.cpp
                src/estadosCamara/CamAbajoMedio.cpp src/estadosCamara/CamArribaArribaMedio.cpp 
                src/estadosCamara/CamDerechaAbajo.cpp src/estadosCamara/CamDerechaMedio.cpp 
