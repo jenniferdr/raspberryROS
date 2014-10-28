@@ -50,5 +50,5 @@ add_executable(servicetest src/detectar.cpp src/detectorPelota.cpp src/Camara.cp
                src/estadosCamara/CamIzquierdaAbajo.cpp src/estadosCamara/CamIzquierdaMedio.cpp 
                src/estadosCamara/CamIzquierdaArriba.cpp )
 
-target_link_libraries(servicetest ${catkin_LIBRARIES}  ${DISPLAY_CAMERA_LIBS} ${LD_LIBRARY_PATH} ${OpenCV_LIBS})
+target_link_libraries(servicetest2 ${catkin_LIBRARIES}  ${DISPLAY_CAMERA_LIBS} ${LD_LIBRARY_PATH} ${OpenCV_LIBS})
 
