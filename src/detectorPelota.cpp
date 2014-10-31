@@ -9,15 +9,15 @@ namespace detectorPelota{
 
   // Matiz
   int matizInf = 0;
-  int matizSup = 49; 
+  int matizSup = 30; 
 
   // Saturacion
-  int satInf = 132; 
-  int satSup = 255;
+  int satInf = 70; 
+  int satSup = 231;
 
   // Valor
-  int valInf = 78;
-  int valSup = 165;
+  int valInf = 101;
+  int valSup = 255;
 
   int posX;
   int posY;

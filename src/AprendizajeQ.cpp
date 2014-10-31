@@ -63,11 +63,11 @@ namespace AprendizajeQ {
       for (int i = 0 ; i < NUM_ACCION  ; i++)
 	{
 	 
-	  std::cout << "antes del atof"<< aux << std::endl;
+
 	  if(separar!= NULL){
 	    Q[j][i] = atof(separar);
 	  }
-	  std::cout << "despues del atof"<< std::endl;
+
 	  //  printf ("es cosa de impresion??%f" , Q[j][i] );
   	 
 	  separar = strtok (NULL, " ");
@@ -123,7 +123,7 @@ namespace AprendizajeQ {
     if (accion != -1)
       Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + Y*maxQ(estado);
 	
-	
+    std::cout << "actualice la tabla con " << Q[estadoViejo][accion] << std::endl;
   }
   /*
    * @Descripcion: Dada la funcion de probabilidad
@@ -160,12 +160,13 @@ namespace AprendizajeQ {
     std::cout << "Hizo elegir accion " << accion << std::endl;
 
     estadoViejo = estado;
-    std::cout << "estadoNuevo a estadoViejo " << estadoViejo << std::endl;
+    
 
     char peticion[2];
-    sprintf(peticion,"%d",estado);
+    // CAMBIE ESTO ESTADO ESTADO EN LUGAR DE ACCION
+    sprintf(peticion,"%d",accion);
     std::cout << "ENVIAR PETICION CON ESTADOOOOOOO" << std::endl << std::endl;
-    // VERIFICAR SI ES ASI DE VERDAD
+    
     Arbotix::peticion(peticion);  
 	
   }
@@ -189,6 +190,7 @@ namespace AprendizajeQ {
     else
       // Premio
       R = 1/dN;
+    std::cout << "recompensa fue:" << R << std::endl;
     return R;
   }
 
