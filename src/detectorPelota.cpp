@@ -29,10 +29,11 @@ namespace detectorPelota{
 
   Mat filtrarPelota(Mat imgOriginal){
 
-    Mat imgHSV;
+      Mat imgHSV;
     cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
     
     Mat imgFiltrada;
+        
     inRange(imgHSV, Scalar(matizInf, satInf, valInf),
 	    Scalar(matizSup, satSup, valSup), imgFiltrada);
     
@@ -47,8 +48,9 @@ namespace detectorPelota{
 	    getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
     erode(imgFiltrada, imgFiltrada,
 	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-
+    
     return imgFiltrada;
+    
   }
 
   bool esVisible(Mat imgOriginal){

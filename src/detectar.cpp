@@ -12,7 +12,7 @@ using namespace std;
 int main (int argc, char ** argv) {
  
   //detectorPelota::crearControlesPelota();
-  std::cout << "HEY SOY EL NUEVO CODIGO";
+  std::cout << "HEY SOY EL NUEVO CODIGO"<< std::endl;
 
   ros::init(argc, argv, "test_srv");
   ros::NodeHandle n;

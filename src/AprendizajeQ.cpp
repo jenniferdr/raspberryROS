@@ -1,4 +1,3 @@
-
 #include "AprendizajeQ.hpp"
 #include "Arbotix.hpp"
 
@@ -46,26 +45,31 @@ namespace AprendizajeQ {
    * Matriz : Q[14][7]
    */
   void leerValores(){
-	
+
     std::ifstream entrada;
     entrada.open("tabla.txt", std::ios_base::binary);
     std::string linea;
     char* separar = NULL;
-	
+
     for (int j = 0 ; j < NUM_ESTADOS; j++){
     
       getline(entrada, linea);
 
-      char* aux = new char[linea.length() + 1];
+      char aux[linea.length() + 1];
       strcpy(aux, linea.c_str());
 	   
       separar = strtok(aux, " ");
 
       for (int i = 0 ; i < NUM_ACCION  ; i++)
 	{
-		  
-	  Q[j][i] = atof(separar);
-	  // printf ("es cosa de impresion??%f" , Q[j][i] );
+	 
+	  std::cout << "antes del atof"<< aux << std::endl;
+	  if(separar!= NULL){
+	    Q[j][i] = atof(separar);
+	  }
+	  std::cout << "despues del atof"<< std::endl;
+	  //  printf ("es cosa de impresion??%f" , Q[j][i] );
+  	 
 	  separar = strtok (NULL, " ");
 		 
 	}
@@ -139,21 +143,26 @@ namespace AprendizajeQ {
 
     for (int i = 0; i < NUM_ACCION; i++)
       suma += pow(k , Q[estado][i]); 
-	
+
+    std::cout << "Hizo suma " << suma << std::endl;
     for(int i = 0 ; i < NUM_ACCION; i++)
       aux[i] = (pow(k , Q[estado][i]))/suma;
 	
     float max = 0;
 		
+    std::cout << "Hizo div " << aux[1] << std::endl;
     for(int i = 0; i < NUM_ACCION; i++ ){
       if (aux[i] > max){
 	max = aux[i];
 	accion = i;
       }
     }
+    std::cout << "Hizo elegir accion " << accion << std::endl;
 
     estadoViejo = estado;
-    char* peticion;
+    std::cout << "estadoNuevo a estadoViejo " << estadoViejo << std::endl;
+
+    char peticion[2];
     sprintf(peticion,"%d",estado);
     std::cout << "ENVIAR PETICION CON ESTADOOOOOOO" << std::endl << std::endl;
     // VERIFICAR SI ES ASI DE VERDAD
@@ -202,46 +211,48 @@ namespace AprendizajeQ {
   /*
    * @Descripcion: Asigna una distancia segun el estado actual
    * la asignacion viene dada por :
-   * e1 , e2 = 1
-   * e3 = 2
-   * e4 , e5 = 3 
-   * e6 = 6
-   * e7 = 8
-   * e8 , e9 = 9
-   * e10 , e11 = 10
-   * e12 , e13 = 7
+   * e0 , e1 = 1
+   * e2 = 2
+   * e3 , e4 = 3 
+   * e5 = 6
+   * e6 = 8
+   * e7 , e8 = 9
+   * e9 , e10, e13 = 10
+   * e11 , e12 = 7
+   * 
    * @Parametros: estado: estado actual
    */
 	
   float distancia (int estado){
     switch (estado){
+    case 0: 
     case 1:
-    case 2:
       return 1.0;
       break;
-    case 3:
+    case 2:
       return 2.0;
       break;
+    case 3:
     case 4:
-    case 5:
       return 3.0;
       break;
-    case 6:
+    case 5:
       return 6.0;
       break;
-    case 7:
+    case 6:
       return 8.0;
       break;
+    case 7:
     case 8:
-    case 9:
       return 9.0;
       break;
+    case 9:
     case 10:
-    case 11:
+    case 13:
       return 10.0;
       break;
+    case 11:
     case 12:
-    case 13:
       return 7.0;
       break;
     } 
