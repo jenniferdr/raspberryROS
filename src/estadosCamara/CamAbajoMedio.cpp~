@@ -23,40 +23,32 @@ void CamAbajoMedio::mostrarImagen(){
   cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
 
   // Puntos para seccionar la imagen
-
-  // Linea 1
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
  
-  // Linea 2
-  verticalIni2 = cvPoint(imgLines.size().width*9/12,0);
+  verticalIni2 = cvPoint(imgLines.size().width*2/3,0);
   verticalFin2 =
-    cvPoint(imgLines.size().width*9/12,imgLines.size().height*5/6);
+    cvPoint(imgLines.size().width*2/3,imgLines.size().height*5/6);
 
-  // Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*5/6);
   horizontalFin =
     cvPoint(imgLines.size().width,imgLines.size().height*5/6);
 
-  // Linea 4
   verticalIni3 = 
     cvPoint(imgLines.size().width*3/12,imgLines.size().height*5/6);
   verticalFin3 =
     cvPoint(imgLines.size().width*3/12,imgLines.size().height);
-  
-  // Linea 5
 
   verticalIni4 = 
-    cvPoint(imgLines.size().width*6/12,imgLines.size().height*5/6);
+    cvPoint(imgLines.size().width*5/12,imgLines.size().height*5/6);
   verticalFin4 =
-    cvPoint(imgLines.size().width*6/12,imgLines.size().height);
+    cvPoint(imgLines.size().width*5/12,imgLines.size().height);
     
-  // Linea 6
   verticalIni5 = 
-    cvPoint(imgLines.size().width*9/12,imgLines.size().height*5/6);
+    cvPoint(imgLines.size().width*2/3,imgLines.size().height*5/6);
   verticalFin5 =
-    cvPoint(imgLines.size().width*9/12,imgLines.size().height);
+    cvPoint(imgLines.size().width*2/3,imgLines.size().height);
 
   // Dibujar division de la pantalla
   line(imgLines, horizontalIni, horizontalFin, cvScalar(0,255,0), 1);

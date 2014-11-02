@@ -12,7 +12,7 @@ using namespace std;
 int main (int argc, char ** argv) {
  
   //detectorPelota::crearControlesPelota();
-  std::cout << "HEY SOY EL NUEVO CODIGO"<< std::endl;
+  //std::cout << "HEY SOY EL NUEVO CODIGO"<< std::endl;
 
   ros::init(argc, argv, "test_srv");
   ros::NodeHandle n;
@@ -34,9 +34,9 @@ int main (int argc, char ** argv) {
     } else {
       Arbotix::peticion("e");
     }	    
-    cout <<"yeiiii";    
+    cout << "Pateo" ;    
   } else {
-    cout << "frieguense todos"; 
+    cout << "No la vio por ningun lado"; 
   }
   
   //respaldar valores Q en archivo

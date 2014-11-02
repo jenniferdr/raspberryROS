@@ -15,8 +15,8 @@
  * a6 = girar poco izquierda
  */
 
-#define K 1.0
-#define Y 0.6
+#define K 1
+#define Y 0.1
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
 #define PRECISION 4
@@ -28,11 +28,7 @@ namespace AprendizajeQ {
   int estadoViejo = 0 ; // por defecto
   // accion anterior es -1 si es la primera vez
   int accion = -1;	
-  float Q[NUM_ESTADOS][NUM_ACCION];
-  float distancia (int estado);
-  int maxQ(int estado);
-  float recompensa(int estadoViejo ,int estadoNuevo);
-	
+    float Q[NUM_ESTADOS][NUM_ACCION];	
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
    * @Parametros: Ninguno 
@@ -119,11 +115,15 @@ namespace AprendizajeQ {
    * @Parametros: estado: estado actual 
    */
   void actualizarValor(int estado){
-	 	  
+    float y = Y;
+    
+    //std::cout << "Valor y= " << y << std::endl;
     if (accion != -1)
-      Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + Y*maxQ(estado);
-	
-    std::cout << "actualice la tabla con " << Q[estadoViejo][accion] << std::endl;
+      Q[estadoViejo][accion] = recompensa(estadoViejo, estado) + y*maxQ(estado);
+
+    //std::cout << "Y*maxQ("<<estado<<")= "<< Y*maxQ(estado);
+    std::cout << "Q["<<estadoViejo<<"]["<<accion<<"]: " 
+	      << Q[estadoViejo][accion] << std::endl;
   }
   /*
    * @Descripcion: Dada la funcion de probabilidad
@@ -141,6 +141,7 @@ namespace AprendizajeQ {
     float aux[NUM_ACCION];
     float suma = 0.0 ;
 
+    /*
     for (int i = 0; i < NUM_ACCION; i++)
       suma += pow(k , Q[estado][i]); 
 
@@ -156,17 +157,17 @@ namespace AprendizajeQ {
 	max = aux[i];
 	accion = i;
       }
-    }
+      }*/
+    srand(time(NULL));
+    accion= rand()%7;
+    std::cout << "En el estado " << estado << std::endl;
     std::cout << "Hizo elegir accion " << accion << std::endl;
 
     estadoViejo = estado;
     
-
+    // Enviar peticion a la Arbotix con la acción  
     char peticion[2];
-    // CAMBIE ESTO ESTADO ESTADO EN LUGAR DE ACCION
     sprintf(peticion,"%d",accion);
-    std::cout << "ENVIAR PETICION CON ESTADOOOOOOO" << std::endl << std::endl;
-    
     Arbotix::peticion(peticion);  
 	
   }
@@ -184,7 +185,7 @@ namespace AprendizajeQ {
     float R;
     float dV = distancia(estadoViejo);
     float dN = distancia(estadoNuevo);
-    if (dV < dN)
+    if (dV <= dN)
       // Castigo
       R = -( dN/10);
     else
@@ -201,12 +202,13 @@ namespace AprendizajeQ {
    *
    */
 	
-  int maxQ(int estado){
-    int max = 0 ; 
+  float maxQ(int estado){
+    float max = 0 ; 
     for(int i = 0; i < NUM_ACCION; i++ ){
       if (Q[estado][i] > max)
 	max = Q[estado][i];
     }
+    std::cout << "maxQ("<<estado<<"): "<<max << std::endl;
     return max;
   }
 

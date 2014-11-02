@@ -3,7 +3,7 @@
 #include "../AprendizajeQ.hpp"
  
 CamIzquierdaArriba::CamIzquierdaArriba(){
-  Arbotix::peticion("f");
+  Arbotix::peticion("g");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }

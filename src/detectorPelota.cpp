@@ -29,7 +29,7 @@ namespace detectorPelota{
 
   Mat filtrarPelota(Mat imgOriginal){
 
-      Mat imgHSV;
+    Mat imgHSV;
     cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
     
     Mat imgFiltrada;
@@ -63,7 +63,7 @@ namespace detectorPelota{
       posY = pMomentos.m01 / dArea;
       posX = pMomentos.m10 / dArea;
     
-      std::cout << "posicion pelota: " << posX << " " << posY << std::endl;
+      //std::cout << "posicion pelota: " << posX << " " << posY << std::endl;
       return true;
     }else{ 
       return false;

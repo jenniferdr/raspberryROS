@@ -3,7 +3,7 @@
  
 CamDerechaArriba::CamDerechaArriba(){
   // Cambiar posicion de la cámara
-  Arbotix::peticion("i");
+  Arbotix::peticion("o");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
