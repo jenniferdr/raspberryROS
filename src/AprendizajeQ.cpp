@@ -15,7 +15,7 @@
  * a6 = girar poco izquierda
  */
 
-#define K 1
+#define K 2
 #define Y 0.1
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
@@ -28,7 +28,8 @@ namespace AprendizajeQ {
   int estadoViejo = 0 ; // por defecto
   // accion anterior es -1 si es la primera vez
   int accion = -1;	
-    float Q[NUM_ESTADOS][NUM_ACCION];	
+  float Q[NUM_ESTADOS][NUM_ACCION];
+	
   /*
    * @Descripcion: Funcion que lee del archivo tabla.txt los valores Aprendidos
    * @Parametros: Ninguno 
@@ -57,8 +58,7 @@ namespace AprendizajeQ {
       separar = strtok(aux, " ");
 
       for (int i = 0 ; i < NUM_ACCION  ; i++)
-	{
-	 
+	{	 
 
 	  if(separar!= NULL){
 	    Q[j][i] = atof(separar);
@@ -138,28 +138,37 @@ namespace AprendizajeQ {
     // si es > 1 favorece la explotacion
     // si es = 1 todo queda igual
     float k = K;
-    float aux[NUM_ACCION];
+    float probabilidad[NUM_ACCION];
     float suma = 0.0 ;
 
-    /*
     for (int i = 0; i < NUM_ACCION; i++)
       suma += pow(k , Q[estado][i]); 
+    //std::cout << "Hizo suma " << suma << std::endl;
 
-    std::cout << "Hizo suma " << suma << std::endl;
     for(int i = 0 ; i < NUM_ACCION; i++)
-      aux[i] = (pow(k , Q[estado][i]))/suma;
+      probabilidad[i] = (pow(k , Q[estado][i]))/suma;
+    //std::cout << "Hizo div " << aux[1] << std::endl;
 	
-    float max = 0;
-		
-    std::cout << "Hizo div " << aux[1] << std::endl;
-    for(int i = 0; i < NUM_ACCION; i++ ){
-      if (aux[i] > max){
-	max = aux[i];
-	accion = i;
-      }
-      }*/
     srand(time(NULL));
-    accion= rand()%7;
+
+    float aleatorio = 0.0; 
+    aleatorio = rand()/ RAND_MAX ; // Entre [0,1]
+    std::cout << "Aleatorio: " << aleatorio << std::endl;
+    
+    float inf = 0;
+    float sup = probabilidad[0];
+    
+    
+    for(int i=0; i< NUM_ACCION; i++){
+      if(inf<aleatorio<=sup){
+	accion = i;
+	break;
+      }
+      if(i>5) std::cout << "HAY UN ERROR, en elegir accion"<< std::endl;
+      inf= inf + probabilidad[i];
+      sup= sup + probabilidad[i+1];
+    }
+
     std::cout << "En el estado " << estado << std::endl;
     std::cout << "Hizo elegir accion " << accion << std::endl;
 
@@ -168,7 +177,16 @@ namespace AprendizajeQ {
     // Enviar peticion a la Arbotix con la acción  
     char peticion[2];
     sprintf(peticion,"%d",accion);
-    Arbotix::peticion(peticion);  
+    Arbotix::peticion(peticion);
+
+    /* Max de aux
+    float max = 0;		
+    for(int i = 0; i < NUM_ACCION; i++ ){
+      if (aux[i] > max){
+	max = aux[i];
+	accion = i;
+      }
+      }*/  
 	
   }
   /*
@@ -185,12 +203,7 @@ namespace AprendizajeQ {
     float R;
     float dV = distancia(estadoViejo);
     float dN = distancia(estadoNuevo);
-    if (dV <= dN)
-      // Castigo
-      R = -( dN/10);
-    else
-      // Premio
-      R = 1/dN;
+    R = (dV - dN)/10;
     std::cout << "recompensa fue:" << R << std::endl;
     return R;
   }
