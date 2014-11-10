@@ -152,7 +152,7 @@ namespace AprendizajeQ {
     srand(time(NULL));
 
     float aleatorio = 0.0; 
-    aleatorio = rand()/ RAND_MAX ; // Entre [0,1]
+    aleatorio = (float ) rand()/ RAND_MAX ; // Entre [0,1]
     std::cout << "Aleatorio: " << aleatorio << std::endl;
     
     float inf = 0;
