@@ -3,7 +3,7 @@
 #include "../AprendizajeQ.hpp"
  
 CamIzquierdaArriba::CamIzquierdaArriba(){
-  Arbotix::peticion("f");
+  Arbotix::peticion("g");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
@@ -19,8 +19,8 @@ bool CamIzquierdaArriba::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
-    AprendizajeQ::actualizarValor(10);
-    AprendizajeQ::tomarAccion(10);
+    AprendizajeQ::actualizarValor(9);
+    AprendizajeQ::tomarAccion(9);
     return true;
 
   } else {

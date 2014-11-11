@@ -2,7 +2,7 @@ all: main
 
 main: AprendizajeQ.o  main.o
 
-	g++   -o main AprendizajeQ.o main.o 
+	g++ -o main AprendizajeQ.o main.o 
 
 aprendizajeQ.o: AprendizajeQ.cpp AprendizajeQ.hpp
 

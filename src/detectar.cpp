@@ -5,14 +5,17 @@
 #include "Arbotix.hpp"
 #include "AprendizajeQ.hpp"
 #include "estadosCamara/CamAbajoMedio.hpp"
+#include <ctime>
 using namespace cv;
 using namespace std;
 
 
 int main (int argc, char ** argv) {
- 
+  time_t ahora = time(0);
+  tm *t = localtime(&ahora);
+  std::cout << "El tiempo inicial es: "<< 1+ t->tm_hour << "h" << 1 +t->tm_min << "m" << t->tm_sec<< "s" << std::endl;
   //detectorPelota::crearControlesPelota();
-  std::cout << "HEY SOY EL NUEVO CODIGO";
+
 
   ros::init(argc, argv, "test_srv");
   ros::NodeHandle n;
@@ -34,13 +37,18 @@ int main (int argc, char ** argv) {
     } else {
       Arbotix::peticion("e");
     }	    
-    cout <<"yeiiii";    
+    cout << "Pateo" ;    
   } else {
-    cout << "frieguense todos"; 
+    cout << "No la vio por ningun lado"; 
   }
   
   //respaldar valores Q en archivo
   AprendizajeQ::escribirValores();
+  ahora = time(0);
+  t = localtime(&ahora);
+  std::cout << "El tiempo final es: "<< 1+ t->tm_hour << "h" << 1 + t->tm_min << "m" << t->tm_sec<< "s" << std::endl;
+  
+  
   return 0;
   
 }

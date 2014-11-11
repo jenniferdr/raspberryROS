@@ -58,13 +58,13 @@ public:
 
   int cuadrantePelota();
 
-  bool estaEnMedioArriba();
+  bool estaEnCentro();
 
   bool estaEnDerecha();
 
   bool estaEnIzquierda();
 
-  bool estaEnAbajoMedio();
+  bool estaEnAbajo();
   
 };
 

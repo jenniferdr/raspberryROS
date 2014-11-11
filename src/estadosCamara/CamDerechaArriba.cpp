@@ -3,7 +3,7 @@
  
 CamDerechaArriba::CamDerechaArriba(){
   // Cambiar posicion de la cámara
-  Arbotix::peticion("i");
+  Arbotix::peticion("o");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
@@ -19,8 +19,8 @@ bool CamDerechaArriba::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
-    AprendizajeQ::actualizarValor(11);
-    AprendizajeQ::tomarAccion(11);
+    AprendizajeQ::actualizarValor(10);
+    AprendizajeQ::tomarAccion(10);
 
     return true;
 

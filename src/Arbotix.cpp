@@ -12,16 +12,16 @@ namespace Arbotix{
 
   bool peticion(std::string pet){
     peticionesHechas = peticionesHechas + 1;
-    std::cout << " peticiones hechas: " << peticionesHechas << std::endl ; 
+    //std::cout << " peticiones hechas: " << peticionesHechas << std::endl ; 
 
     rosserial_arduino::Test srv;
     srv.request.input = pet;
-    std::cout << srv.request.input ;
+    std::cout << "Peticion: " << srv.request.input ;
     
     if (client->call(srv)){
       
       ROS_INFO("Sum: %s", srv.response.output.c_str());
-      std::cout << " true" << std::endl ; 
+      //std::cout << " true" << std::endl ; 
       return true;
     }else{
       ROS_ERROR("Failed to call service moverRobot");

@@ -1,8 +1,8 @@
 //Secciones de la camara 
-/* 6 Abajo
- * 7 central
- * 8 Izquierda
- * 9 Derecha
+/* 5 Abajo
+ * 6 central
+ * 7 Izquierda
+ * 8 Derecha
 */
 
 #include "CamArribaMedio.hpp"
@@ -67,13 +67,13 @@ int CamArribaMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 8; 
+    return 7; 
   }else if(estaEnCentro()){
-    return 7;
-  }else if(estaEnDerecha()){
-    return 9;
-  }else if(estaEnAbajo()){
     return 6;
+  }else if(estaEnDerecha()){
+    return 8;
+  }else if(estaEnAbajo()){
+    return 5;
   }
 }
 

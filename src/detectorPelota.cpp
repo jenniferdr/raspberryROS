@@ -9,15 +9,15 @@ namespace detectorPelota{
 
   // Matiz
   int matizInf = 0;
-  int matizSup = 49; 
+  int matizSup = 30; 
 
   // Saturacion
-  int satInf = 132; 
-  int satSup = 255;
+  int satInf = 70; 
+  int satSup = 231;
 
   // Valor
-  int valInf = 78;
-  int valSup = 165;
+  int valInf = 101;
+  int valSup = 255;
 
   int posX;
   int posY;
@@ -33,6 +33,7 @@ namespace detectorPelota{
     cvtColor(imgOriginal, imgHSV, COLOR_BGR2HSV);
     
     Mat imgFiltrada;
+        
     inRange(imgHSV, Scalar(matizInf, satInf, valInf),
 	    Scalar(matizSup, satSup, valSup), imgFiltrada);
     
@@ -47,8 +48,9 @@ namespace detectorPelota{
 	    getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) ); 
     erode(imgFiltrada, imgFiltrada,
 	  getStructuringElement(MORPH_ELLIPSE, Size(5, 5)) );
-
+    
     return imgFiltrada;
+    
   }
 
   bool esVisible(Mat imgOriginal){
@@ -61,7 +63,7 @@ namespace detectorPelota{
       posY = pMomentos.m01 / dArea;
       posX = pMomentos.m10 / dArea;
     
-      std::cout << "posicion pelota: " << posX << " " << posY << std::endl;
+      //std::cout << "posicion pelota: " << posX << " " << posY << std::endl;
       return true;
     }else{ 
       return false;

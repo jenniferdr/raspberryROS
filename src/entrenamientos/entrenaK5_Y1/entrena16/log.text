@@ -1,0 +1,75 @@
+El tiempo inicial es: 14h53m1s
+Peticion: r[0m[ INFO] [1415713922.339634795]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+Q[0][-1]: 0
+Tomar accion con estado 3
+Aleatorio: 0.790846
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1415713935.473643046]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415713935.684373985]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0.02
+Q[3][6]: 0.102
+Tomar accion con estado 2
+Aleatorio: 0.948611
+En el estado 2
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1415713947.664003412]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415713947.888633951]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:-0.1
+maxQ(4): 0.102
+Q[2][6]: -0.0898
+Tomar accion con estado 4
+Aleatorio: 0.250291
+En el estado 4
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1415713959.336803643]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415713959.552820429]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0.02
+Q[4][2]: 0.102
+Tomar accion con estado 2
+Aleatorio: 0.192811
+En el estado 2
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1415713970.954518437]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415713971.172743159]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1415713975.844216770]: Sum: y[0m
+Peticion: u[0m[ INFO] [1415713980.335760553]: Sum: u[0m
+recompensa fue:-0.5
+maxQ(12): 0.5
+Q[2][2]: -0.45
+Aleatorio: 0.723914
+En el estado 12
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1415713991.098178918]: Sum: 5[0m
+Peticion: r[0m[ INFO] [1415713991.310790801]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.5
+maxQ(2): 0.02
+Q[12][5]: 0.502
+Tomar accion con estado 2
+Aleatorio: 0.659443
+En el estado 2
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1415714002.097670445]: Sum: 5[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415714002.321246012]: Sum: r[0m
+Actualizar valor camAbajMedio estado 0
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][5]: 0.2
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][5]: 0.2
+Peticion: e[0m[ INFO] [1415714009.320415625]: Sum: e[0m
+PateoEl tiempo final es: 14h54m29s

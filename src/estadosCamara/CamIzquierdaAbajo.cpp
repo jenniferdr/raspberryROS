@@ -19,8 +19,8 @@ bool CamIzquierdaAbajo::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     
-    AprendizajeQ::actualizarValor(12);
-    AprendizajeQ::tomarAccion(12);
+    AprendizajeQ::actualizarValor(11);
+    AprendizajeQ::tomarAccion(11);
     return true;
 
   } else {
