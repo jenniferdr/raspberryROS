@@ -15,8 +15,8 @@
  * a6 = girar poco izquierda
  */
 
-#define K 2
-#define Y 0.1
+#define K 5
+#define Y 0.7
 #define NUM_ESTADOS 14
 #define NUM_ACCION 7
 #define PRECISION 4
@@ -152,7 +152,7 @@ namespace AprendizajeQ {
     srand(time(NULL));
 
     float aleatorio = 0.0; 
-    aleatorio = (float ) rand()/ RAND_MAX ; // Entre [0,1]
+    aleatorio = (float ) rand()/ (float) RAND_MAX ; // Entre [0,1]
     std::cout << "Aleatorio: " << aleatorio << std::endl;
     
     float inf = 0;
@@ -164,7 +164,7 @@ namespace AprendizajeQ {
 	accion = i;
 	break;
       }
-      if(i>5) std::cout << "HAY UN ERROR, en elegir accion"<< std::endl;
+      
       inf= inf + probabilidad[i];
       sup= sup + probabilidad[i+1];
     }

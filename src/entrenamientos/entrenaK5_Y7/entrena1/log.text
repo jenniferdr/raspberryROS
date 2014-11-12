@@ -1,0 +1,117 @@
+El tiempo inicial es: 23h31m29s
+Peticion: r[0m[ INFO] [1415745030.648613979]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+Q[0][-1]: 0
+Tomar accion con estado 2
+Aleatorio: 0.768074
+En el estado 2
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1415745043.232796191]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415745043.452564772]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:-0.1
+maxQ(4): 0
+Q[2][6]: -0.1
+Tomar accion con estado 4
+Aleatorio: 0.929805
+En el estado 4
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1415745055.665813193]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415745055.881742892]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0
+maxQ(4): 0
+Q[4][6]: 0
+Tomar accion con estado 4
+Aleatorio: 0.228791
+En el estado 4
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1415745067.284011311]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415745067.498945044]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1415745071.691512833]: Sum: y[0m
+Peticion: u[0m[ INFO] [1415745076.406117451]: Sum: u[0m
+Peticion: p[0m[ INFO] [1415745080.652467757]: Sum: p[0m
+Peticion: g[0m[ INFO] [1415745084.439271483]: Sum: g[0m
+Peticion: o[0m[ INFO] [1415745089.509256891]: Sum: o[0m
+Peticion: r[0m[ INFO] [1415745095.489615870]: Sum: r[0m
+actualizar valor estado 13
+recompensa fue:-0.7
+maxQ(13): 0
+Q[4][2]: -0.7
+Despues de actualizar valor, tomare accion 
+Aleatorio: 0.0667488
+En el estado 13
+Hizo elegir accion 1
+Peticion: 1[0m[ INFO] [1415745103.719081528]: Sum: 1[0m
+Ya tome la accion 
+Peticion: a[0m[ INFO] [1415745103.837192094]: Sum: a[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1415745104.273992395]: Sum: y[0m
+Peticion: u[0m[ INFO] [1415745108.608513395]: Sum: u[0m
+Peticion: p[0m[ INFO] [1415745112.553325758]: Sum: p[0m
+Peticion: g[0m[ INFO] [1415745116.765092398]: Sum: g[0m
+Peticion: o[0m[ INFO] [1415745121.737407991]: Sum: o[0m
+Peticion: r[0m[ INFO] [1415745128.606538580]: Sum: r[0m
+actualizar valor estado 13
+recompensa fue:0
+maxQ(13): 0
+Q[13][1]: 0
+Despues de actualizar valor, tomare accion 
+Aleatorio: 0.392692
+En el estado 13
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1415745136.800258840]: Sum: 3[0m
+Ya tome la accion 
+Peticion: a[0m[ INFO] [1415745136.914793517]: Sum: a[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1415745137.362421534]: Sum: y[0m
+Peticion: u[0m[ INFO] [1415745141.380646999]: Sum: u[0m
+Peticion: p[0m[ INFO] [1415745145.898833002]: Sum: p[0m
+Peticion: g[0m[ INFO] [1415745150.616532263]: Sum: g[0m
+Peticion: o[0m[ INFO] [1415745155.193136656]: Sum: o[0m
+Peticion: r[0m[ INFO] [1415745159.982593923]: Sum: r[0m
+actualizar valor estado 13
+recompensa fue:0
+maxQ(13): 0
+Q[13][3]: 0
+Despues de actualizar valor, tomare accion 
+Aleatorio: 0.500072
+En el estado 13
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1415745168.033595815]: Sum: 4[0m
+Ya tome la accion 
+Peticion: a[0m[ INFO] [1415745168.161006127]: Sum: a[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0.7
+maxQ(4): 0
+Q[13][4]: 0.7
+Tomar accion con estado 4
+Aleatorio: 0.935183
+En el estado 4
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1415745175.923272495]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415745176.144426097]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1415745180.731261413]: Sum: y[0m
+Peticion: u[0m[ INFO] [1415745185.473835264]: Sum: u[0m
+Peticion: p[0m[ INFO] [1415745189.902246238]: Sum: p[0m
+Peticion: g[0m[ INFO] [1415745194.311118811]: Sum: g[0m
+Peticion: o[0m[ INFO] [1415745199.416930284]: Sum: o[0m
+Peticion: r[0m[ INFO] [1415745204.479823042]: Sum: r[0m
+actualizar valor estado 13
+recompensa fue:-0.7
+maxQ(13): 0.7
+Q[4][6]: -0.21
+Despues de actualizar valor, tomare accion 
+Aleatorio: 0.268576
+En el estado 13
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1415745211.861581900]: Sum: 3[0m
+Ya tome la accion 
+Peticion: a[0m[ INFO] [1415745211.979522496]: Sum: a[0m
+No la vio por ningun ladoEl tiempo final es: 23h34m32s
