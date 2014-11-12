@@ -1,0 +1,51 @@
+El tiempo inicial es: 1h33m29s
+Peticion: r[0m[ INFO] [1415752350.631184128]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+Q[0][-1]: 0
+Tomar accion con estado 4
+Aleatorio: 0.963587
+En el estado 4
+Hizo elegir accion -1
+Peticion: -1[0m[ INFO] [1415752356.406088714]: Sum: -1[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415752356.679820779]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+Q[4][-1]: 0
+Tomar accion con estado 4
+Aleatorio: 0.263238
+En el estado 4
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1415752368.771143255]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415752368.998316670]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0
+maxQ(4): 0.07
+Q[4][2]: 0.049
+Tomar accion con estado 4
+Aleatorio: 0.0589088
+En el estado 4
+Hizo elegir accion 1
+Peticion: 1[0m[ INFO] [1415752376.933502633]: Sum: 1[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415752377.150896331]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0
+maxQ(4): 0.07
+Q[4][1]: 0.049
+Tomar accion con estado 4
+Aleatorio: 0.422273
+En el estado 4
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1415752384.732982532]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1415752384.957027037]: Sum: r[0m
+Actualizar valor camAbajMedio estado 1
+recompensa fue:0.2
+maxQ(1): 1
+Q[4][3]: 0.9
+recompensa fue:0.2
+maxQ(1): 1
+Q[4][3]: 0.9
+Peticion: q[0m[ INFO] [1415752391.240576883]: Sum: q[0m
+PateoEl tiempo final es: 1h34m11s
