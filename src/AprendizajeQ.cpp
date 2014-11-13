@@ -149,7 +149,7 @@ namespace AprendizajeQ {
       probabilidad[i] = (pow(k , Q[estado][i]))/suma;
     //std::cout << "Hizo div " << aux[1] << std::endl;
 	
-    srand(time(NULL));
+    /*    srand(time(NULL));
 
     float aleatorio = 0.0; 
     aleatorio = (float ) rand()/ (float) RAND_MAX ; // Entre [0,1]
@@ -168,7 +168,17 @@ namespace AprendizajeQ {
       inf= inf + probabilidad[i];
       sup= sup + probabilidad[i+1];
     }
+    */
+    //Max de aux
+    float max = 0;		
+    for(int i = 0; i < NUM_ACCION; i++ ){
+      if (probabilidad[i] > max){
+	max = probabilidad[i];
+	accion = i;
+      }
+    }  
 
+    
     std::cout << "En el estado " << estado << std::endl;
     std::cout << "Hizo elegir accion " << accion << std::endl;
 
@@ -179,15 +189,7 @@ namespace AprendizajeQ {
     sprintf(peticion,"%d",accion);
     Arbotix::peticion(peticion);
 
-    /* Max de aux
-    float max = 0;		
-    for(int i = 0; i < NUM_ACCION; i++ ){
-      if (aux[i] > max){
-	max = aux[i];
-	accion = i;
-      }
-      }*/  
-	
+    	
   }
   /*
    * @Descripcion: Dado el estado anterior y el actual se otorga un recompensa

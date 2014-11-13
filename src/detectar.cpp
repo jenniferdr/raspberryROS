@@ -5,7 +5,7 @@
 #include "Arbotix.hpp"
 #include "AprendizajeQ.hpp"
 #include "estadosCamara/CamAbajoMedio.hpp"
-#include "estadosArcos/CamMedio.hpp"
+//#include "estadosArco/CamMedio.hpp"
 #include <ctime>
 using namespace cv;
 using namespace std;
@@ -31,16 +31,16 @@ int main (int argc, char ** argv) {
   CamAbajoMedio pitazo;
   bool pateoDerecha;
   if (pitazo.irZonaPateo(pateoDerecha)){
-	  CamMedio posicion;
-	  if (posicion.irPosicion(pateoDerecha)){
-		  if (pateoDerecha == true) {
-			  Arbotix::peticion("q");	
-			  
-		  } else {
-			  Arbotix::peticion("e");
-		  }	    
-		  cout << "Pateo" ;
-	  }
+    //CamMedio posicion;
+    //	  if (posicion.irPosicion(pateoDerecha)){
+    if (pateoDerecha == true) {
+      Arbotix::peticion("q");	
+      
+    } else {
+      Arbotix::peticion("e");
+    }	    
+    cout << "Pateo" ;
+    //	  }
   } else {
 	  cout << "No la vio por ningun lado"; 
   }

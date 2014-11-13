@@ -55,10 +55,10 @@ bool CamDerecha::ubicarPelota(){
 
   } else {
 	  CamIzquierda camSiguiente;
-	  return camSiguiente.ubicarPelota
+	  return camSiguiente.ubicarPelota();
 	  
   }
-
+}
 int CamDerecha::cuadrantePelota(){
   detectorArco::obtenerPosicion(this->posX,this->posY);
 
@@ -85,4 +85,4 @@ bool CamDerecha::estaEnIzquierda(){
   }
   return false;
 }
-}
+

@@ -1,21 +1,21 @@
-
+#include "CamDerecha.hpp"
 #include "CamIzquierda.hpp"
 
 /* 
- * 6 Izquierda
- * 7 Derecha
+ * 4 Izquierda
+ * 5 Derecha
 */
  
-CamIzquierda::CamIzquierda(){
+CamDerecha::CamDerecha(){
   // Cambiar posicion de la cámara
-  Arbotix::peticion("g");
+  Arbotix::peticion("o");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
 
-void CamIzquierda::mostrarImagen(){
-	cv::Size sizeImgOrig = this->imgOriginal.size();
-	cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
+void CamDerecha::mostrarImagen(){
+cv::Size sizeImgOrig = this->imgOriginal.size();
+  cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
 
   // Puntos para seccionar la imagen
 /*   ______________________
@@ -43,34 +43,34 @@ void CamIzquierda::mostrarImagen(){
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamIzquierda::ubicarPelota(){
+bool CamDerecha::ubicarPelota(){
 
   if (detectorArco::esVisible(this->imgOriginal)){
 	  int estado = cuadrantePelota();
-	  if (estado == 6)
-		  Arbotix::peticion("4");
-	  if (estado == 7)
-		  Arbotix::peticion("6");
+	  if (estado == 4)
+		  Arbotix::peticion("5");
+	  if (estado == 5)
+		  Arbotix::peticion("3");
 	  return true;
 
   } else {
-	  // ultima camara
-	  return false;
+	  CamIzquierda camSiguiente;
+	  return camSiguiente.ubicarPelota
 	  
   }
-}
-int CamIzquierda::cuadrantePelota(){
+
+int CamDerecha::cuadrantePelota(){
   detectorArco::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 6; 
+    return 4; 
   }else if(estaEnDerecha()){
-    return 7;
+    return 5;
   }
 }
 
 
-bool CamIzquierda::estaEnDerecha(){
+bool CamDerecha::estaEnDerecha(){
   
   if (this->posX > verticalIni.x){
     return true;
@@ -78,11 +78,11 @@ bool CamIzquierda::estaEnDerecha(){
   return false;
 }
 
-bool CamIzquierda::estaEnIzquierda(){
+bool CamDerecha::estaEnIzquierda(){
   
   if (this->posX < verticalIni.x){
     return true;
   }
   return false;
 }
-
+}

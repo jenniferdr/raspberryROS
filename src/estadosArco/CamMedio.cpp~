@@ -13,7 +13,7 @@ CamaMedio::CamMedio(){
   Arbotix::peticion("y");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
-  
+  this->enPosicion = false;  
 }
 
 void CamMedio::mostrarImagen(){
@@ -53,24 +53,60 @@ void CamMedio::mostrarImagen(){
 
 }
 
+bool CamMedio::irPosicion(bool &pateoDerecha){
+  int maxGiros = 10; // Numero de veces a girar sin ver la pelota
+  int vuelta = 1;
 
-// Devuelve true si ubicó la pelota en alguna camara
-// Devuelve false si no la vio en ninguna camara 
-bool CamMedio::ubicarPelota(){
+  while(vuelta < maxGiros){
+    bool ArcoAlaVista = ubicarPelota();
+    if(ArcoAlaVista && this->enPosicion)return true;
 
-  if (detectorPelota::esVisible(this->imgOriginal)){
-    int estado = cuadrantePelota();
-	return true;
-
-  } else {
-    CamDerecha camSiguiente;
-    return camSiguiente.ubicarPelota();
+    Arbotix::peticion("y"); // Mover camara medio
+    this->imgOriginal = Camara::obtenerImagen();
+    mostrarImagen();
+	// Rodear
+    if(! ArcoAlaVista) {
+      vuelta++;
+	  if (pateoDerecha)
+		  Arbotix:: peticion("4");
+	  else
+		  Arbotix:: peticion("3");
+    }
   }
+
+  // Alcanzó el numero max de giros sin encontrar pelota
+  return false;
+}
+
+/* Devuelve true si vio la pelota en cualquier posicion 
+ * de la camara
+ * Devuelve false si no la vio en ninguna posicion
+ * de camara
+ */ 
+bool CamMedio::ubicarPelota(){
+  
+	if (detectorArco::esVisible(this->imgOriginal)){
+		int estado = cuadrantePelota();
+		if ( estado == 1 ){
+			this->enPosicion = true;
+		}else{
+			if (estado == 2)
+				Arbotix::peticion("4"); // Girar a la izquierda
+			if (estado == 3)
+				Arbotix::peticion("3"); // Girar a la derecha
+		}
+		return true;
+
+	} else {
+		std:: cout << " no la vi en camara 1" << std::endl; 
+		CamDerecha siguiente;
+		return siguiente.ubicarPelota();
+	}
 
 }
 
 int CamMedio::cuadrantePelota(){
-  detectorPelota::obtenerPosicion(this->posX,this->posY);
+  detectorArco::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
     return 2; 

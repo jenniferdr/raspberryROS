@@ -1,4 +1,4 @@
-/Secciones de la camara 
+//Secciones de la camara 
 /* 
  * 1 central
  * 2 Izquierda
@@ -9,7 +9,7 @@
 #include "CamDerecha.hpp"
 
  
-CamaMedio::CamMedio(){
+CamMedio::CamMedio(){
   Arbotix::peticion("y");
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
@@ -121,7 +121,7 @@ bool CamMedio::estaEnCentro(){
   
   if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x ){
-
+    
     return true;
   }
   return false;
@@ -144,7 +144,6 @@ bool CamMedio::estaEnIzquierda(){
 }
 
 
-}
 
 
 
