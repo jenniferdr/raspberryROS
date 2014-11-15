@@ -57,7 +57,7 @@ bool CamDerechaAbajo::ubicarPelota(){
   }
 }
 
-int CamAbajoMedio::cuadrantePelota(){
+int CamDerechaAbajo::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
@@ -66,14 +66,14 @@ int CamAbajoMedio::cuadrantePelota(){
 	  return 17;
   }
 }
-bool CamAbajoMedio::estaEnIzquierda(){
+bool CamDerechaAbajo::estaEnIzquierda(){
   
   if (this->posX < verticalIni.x){
     return true;
   }
   return false;
 }
-bool CamAbajoMedio::estaEnDerecha(){
+bool CamDerechaAbajo::estaEnDerecha(){
   
   if (this->posX > verticalIni.x){
     return true;
