@@ -1,3 +1,8 @@
+//Secciones de la camara 
+/* 15 Zona de pateo izquierda
+ * 14 Zona de pateo derecha
+ */
+
 #include "CamIzquierdaArriba.hpp"
 #include "CamIzquierdaAbajo.hpp"
 #include "../AprendizajeQ.hpp"
@@ -9,7 +14,29 @@ CamIzquierdaAbajo::CamIzquierdaAbajo(){
 }
 
 void CamIzquierdaAbajo::mostrarImagen(){
-  imshow("Original", this->imgOriginal);
+  cv::Size sizeImgOrig = this->imgOriginal.size();
+  cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
+
+/* _________________________________
+ * |               "               | 
+ * |               "               |
+ * |            1->"               |
+ * |               "               |
+ * |               "               |
+ * |               "               |
+ * |_______________"_______________|
+ */
+  // Puntos para seccionar la imagen
+  // Linea 1
+  verticalIni = cvPoint(imgLines.size().width/2,0);
+  verticalFin =
+    cvPoint(imgLines.size().width/2,imgLines.size().height);
+ 
+  // Dibujar division de la pantalla
+  line(imgLines, verticalIni, verticalFin, cvScalar(0,255,0), 1);
+
+  imgOriginal = imgOriginal + imgLines;
+  imshow("Original", imgOriginal);
   cv::waitKey(10);
 }
 
@@ -18,7 +45,7 @@ void CamIzquierdaAbajo::mostrarImagen(){
 bool CamIzquierdaAbajo::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
-    
+    int estado = cuadrantePelota();
     AprendizajeQ::actualizarValor(11);
     AprendizajeQ::tomarAccion(11);
     return true;
@@ -31,7 +58,10 @@ bool CamIzquierdaAbajo::ubicarPelota(){
 
 }
 
-
+int CamIzquierdaAbajo::cuadrantePelota(){
+  detectorPelota::obtenerPosicion(this->posX,this->posY);
+  // Aqui cosas 
+}
 
 
 
