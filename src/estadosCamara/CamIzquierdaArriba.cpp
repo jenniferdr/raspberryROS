@@ -1,6 +1,6 @@
 //Secciones de la camara 
-/* 12 Zona de pateo izquierda
- * 13 Zona de pateo derecha
+/* 11 Zona de pateo izquierda
+ * 10 Zona de pateo derecha
  */
  
 #include "CamDerechaArriba.hpp"
@@ -28,9 +28,9 @@ void CamIzquierdaArriba::mostrarImagen(){
  */
   // Puntos para seccionar la imagen
   // Linea 1
-  verticalIni = cvPoint(imgLines.size().width/2,0);
+  verticalIni = cvPoint(imgLines.size().width*1/2,0);
   verticalFin =
-    cvPoint(imgLines.size().width/2,imgLines.size().height);
+    cvPoint(imgLines.size().width*1/2,imgLines.size().height);
  
   // Dibujar division de la pantalla
   line(imgLines, verticalIni, verticalFin, cvScalar(0,255,0), 1);
@@ -57,8 +57,32 @@ bool CamIzquierdaArriba::ubicarPelota(){
   }
 
 }
-
-int CamIzquierdaArriba::cuadrantePelota(){
+int CamAbajoMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
-  // Aqui cosas 
+
+  if (estaEnIzquierda()){
+	  return 11; 
+  }else if(estaEnDerecha()){
+	  return 10;
+  }
 }
+bool CamAbajoMedio::estaEnIzquierda(){
+  
+  if (this->posX < verticalIni.x){
+    return true;
+  }
+  return false;
+}
+bool CamAbajoMedio::estaEnDerecha(){
+  
+  if (this->posX > verticalIni.x){
+    return true;
+  }
+  return false;
+}
+
+
+
+
+
+
