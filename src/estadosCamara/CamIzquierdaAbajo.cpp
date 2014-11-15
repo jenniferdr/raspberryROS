@@ -28,9 +28,9 @@ void CamIzquierdaAbajo::mostrarImagen(){
  */
   // Puntos para seccionar la imagen
   // Linea 1
-  verticalIni = cvPoint(imgLines.size().width/2,0);
+  verticalIni = cvPoint(imgLines.size().width*1/2,0);
   verticalFin =
-    cvPoint(imgLines.size().width/2,imgLines.size().height);
+    cvPoint(imgLines.size().width*1/2,imgLines.size().height);
  
   // Dibujar division de la pantalla
   line(imgLines, verticalIni, verticalFin, cvScalar(0,255,0), 1);
@@ -58,10 +58,32 @@ bool CamIzquierdaAbajo::ubicarPelota(){
 
 }
 
-int CamIzquierdaAbajo::cuadrantePelota(){
+int CamAbajoMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
-  // Aqui cosas 
+
+  if (estaEnIzquierda()){
+	  return 15; 
+  }else if(estaEnDerecha()){
+	  return 14;
+  }
 }
+bool CamAbajoMedio::estaEnIzquierda(){
+  
+  if (this->posX < verticalIni.x){
+    return true;
+  }
+  return false;
+}
+bool CamAbajoMedio::estaEnDerecha(){
+  
+  if (this->posX > verticalIni.x){
+    return true;
+  }
+  return false;
+}
+
+
+
 
 
 
