@@ -33,11 +33,11 @@ void CamArribaMedio::mostrarImagen(){
   // Linea 1
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
+    cvPoint(imgLines.size().width*3/12,imgLines.size().height);
   // Linea 2
   verticalIni2 = cvPoint(imgLines.size().width*2/3,0);
   verticalFin2 =
-    cvPoint(imgLines.size().width*2/3,imgLines.size().height*5/6);
+    cvPoint(imgLines.size().width*2/3,imgLines.size().height);
 // Linea 3
   horizontalIni = cvPoint(imgLines.size().width*3/12,imgLines.size().height/2);
   horizontalFin =
