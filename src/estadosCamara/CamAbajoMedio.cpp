@@ -175,14 +175,6 @@ int CamAbajoMedio::cuadrantePelota(){
   }
 }
 
-//Secciones de la camara 
-/* 0 Zona de pateo izquierda
- * 1 Zona de pateo derecha
- * 2 Central Abajo
- * 3 Central Arriba
- * 4 Izquierda
- * 5 Derecha
- */
 bool CamAbajoMedio::estaEnMedioAbajo(){
 
 	if (this->posX > verticalIni.x 
