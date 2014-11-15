@@ -165,6 +165,7 @@ namespace AprendizajeQ {
     for(int i=0; i< NUM_ACCION; i++){
       if(inf<aleatorio<=sup){
 	accion = i;
+	std::cout << " " << accion << " " ;
 	break;
       }
       
