@@ -27,19 +27,18 @@ void CamAbajoMedio::mostrarImagen(){
   // Puntos para seccionar la imagen
 
 /* ____________________________________
- * |       "                    "     | 
- * |       "                    "     |
- * |    1->"                2-> "     |
- * |  3    "                    "     |
+ * |       "      7             "     | 
+ * |       "      ^             "     |
+ * |    1->"      |         2-> "     |
+ * |  3    "  ----------------- "     |
  * |  ^    "                    "     |
  * |  |    "                    "     |
  * |""""""""""""""""""""""""""""""""""|
  * |       "->4     :->5     6<-"     |
  * |_______"________: __________"_____|
  */
-  // Linea 1
-
   
+  // Linea 1
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
@@ -61,7 +60,6 @@ void CamAbajoMedio::mostrarImagen(){
     cvPoint(imgLines.size().width*3/12,imgLines.size().height);
   
   // Linea 5
-
   verticalIni4 = 
     cvPoint(imgLines.size().width*6/12,imgLines.size().height*5/6);
   verticalFin4 =
@@ -73,14 +71,21 @@ void CamAbajoMedio::mostrarImagen(){
   verticalFin5 =
     cvPoint(imgLines.size().width*9/12,imgLines.size().height);
 
+  // Linea 7
+  horizontalIni2 = 
+    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/9);
+  horizontalFin2 =
+    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*5/9);
+    
   // Dibujar division de la pantalla
   line(imgLines, horizontalIni, horizontalFin, cvScalar(0,255,0), 1);
+  line(imgLines, horizontalIni2, horizontalFin2, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni, verticalFin, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni2, verticalFin2, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni3, verticalFin3, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni4, verticalFin4, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni5, verticalFin5, cvScalar(0,255,0), 1);
-
+  
 
   imgOriginal = imgOriginal + imgLines;
   imshow("Original", imgOriginal);
