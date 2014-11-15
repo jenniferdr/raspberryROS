@@ -17,7 +17,7 @@
 
 #define K 5
 #define Y 0.7
-#define NUM_ESTADOS 14
+#define NUM_ESTADOS 19
 #define NUM_ACCION 7
 #define PRECISION 4
 
