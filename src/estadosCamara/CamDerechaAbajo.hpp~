@@ -21,32 +21,25 @@
 #include "../Camara.hpp"
 #include "../Arbotix.hpp"
 
-#ifndef H_CamIzquierdaArriba
-#define H_CamIzquierdaArriba
+#ifndef H_CamDerechaAbajo
+#define H_CamDerechaAbajo
 
-class CamIzquierdaArriba{
+class CamDerechaAbajo{
 
 private:
 
   cv::Mat imgOriginal;
-  CvPoint verticalIni; 
-  CvPoint verticalFin; 
-  int posX;
-  int posY;
-
+   
 public:
   
 
-  CamIzquierdaArriba();
+  CamDerechaAbajo();
   void mostrarImagen();
 
 
   // Devuelve true si ubicó la pelota en alguna camara
   // Devuelve false si no la vio en ninguna camara 
   bool ubicarPelota();
- int cuadrantePelota();
-  bool estaEnDerecha();
-  bool estaEnIzquierda();
 
 };
 

@@ -180,7 +180,7 @@ bool CamAbajoMedio::estaEnMedioAbajo(){
 	if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
       && this->posY < horizontalIni.y
-	  && this->posY > horizontalIni2.y ){
+	  && this->posY > horizontalini2.y ){
 
     return true;
   }

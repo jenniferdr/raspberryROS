@@ -55,9 +55,6 @@ private:
   CvPoint horizontalIni;
   CvPoint horizontalFin;
 
-  CvPoint horizontalIni2;
-  CvPoint horizontalFin2;
-
   // linea vertical area de pateo
   CvPoint verticalIni3;
   CvPoint verticalFin3;
@@ -85,8 +82,6 @@ public:
   int cuadrantePelota();
 
   bool estaEnMedioArriba();
-
-  bool estaEnMedioAbajo();
 
   bool estaEnDerecha();
 

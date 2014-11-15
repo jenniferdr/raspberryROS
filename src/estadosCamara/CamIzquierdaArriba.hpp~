@@ -29,11 +29,7 @@ class CamIzquierdaArriba{
 private:
 
   cv::Mat imgOriginal;
-  CvPoint verticalIni; 
-  CvPoint verticalFin; 
-  int posX;
-  int posY;
-
+   
 public:
   
 
@@ -44,9 +40,6 @@ public:
   // Devuelve true si ubicó la pelota en alguna camara
   // Devuelve false si no la vio en ninguna camara 
   bool ubicarPelota();
- int cuadrantePelota();
-  bool estaEnDerecha();
-  bool estaEnIzquierda();
 
 };
 

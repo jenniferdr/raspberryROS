@@ -20,7 +20,7 @@
 #include "../detectorPelota.hpp"
 #include "../Camara.hpp"
 #include "../Arbotix.hpp"
-
+#include "../detectorPelota.hpp"
 #ifndef H_CamDerechaAbajo
 #define H_CamDerechaAbajo
 
@@ -29,10 +29,13 @@ class CamDerechaAbajo{
 private:
 
   cv::Mat imgOriginal;
+  int posX;
+  int posY;
    
-public:
-  
 
+  CvPoint verticalIni; 
+  CvPoint verticalFin; 
+public:
   CamDerechaAbajo();
   void mostrarImagen();
 
@@ -40,6 +43,10 @@ public:
   // Devuelve true si ubicó la pelota en alguna camara
   // Devuelve false si no la vio en ninguna camara 
   bool ubicarPelota();
+  int cuadrantePelota();
+  bool estaEnDerecha();
+  bool estaEnIzquierda();
+
 
 };
 

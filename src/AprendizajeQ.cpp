@@ -15,8 +15,8 @@
  * a6 = girar poco izquierda
  */
 
-#define K 5
-#define Y 0.7
+#define K 3
+#define Y 0.1
 #define NUM_ESTADOS 19
 #define NUM_ACCION 7
 #define PRECISION 4
@@ -149,7 +149,7 @@ namespace AprendizajeQ {
       probabilidad[i] = (pow(k , Q[estado][i]))/suma;
     //std::cout << "Hizo div " << aux[1] << std::endl;
 	
-    /*    srand(time(NULL));
+    srand(time(NULL));
 
     float aleatorio = 0.0; 
     aleatorio = (float ) rand()/ (float) RAND_MAX ; // Entre [0,1]
@@ -168,7 +168,7 @@ namespace AprendizajeQ {
       inf= inf + probabilidad[i];
       sup= sup + probabilidad[i+1];
     }
-    */
+    /*
     //Max de aux
     float max = 0;		
     for(int i = 0; i < NUM_ACCION; i++ ){
@@ -177,7 +177,7 @@ namespace AprendizajeQ {
 	accion = i;
       }
     }  
-
+    */
     
     std::cout << "En el estado " << estado << std::endl;
     std::cout << "Hizo elegir accion " << accion << std::endl;
@@ -246,42 +246,42 @@ namespace AprendizajeQ {
     switch (estado){
     case 0: 
     case 1:
-		return 1.0;
-		break;
+      return 1.0;
+      break;
     case 2:
-		return 2.0;
-		break;
+      return 2.0;
+      break;
     case 3:
     case 4:
-	case 5:
-		return 3.0;
-		break;
+    case 5:
+      return 3.0;
+      break;
     case 6:
-		return 5.0;
-		break;
+      return 5.0;
+      break;
     case 7:
-		return 6.0;
-		break;
+      return 6.0;
+      break;
     case 8:
     case 9:
-	case 15:
-	case 17:
-		return 8.0;
-		break;
+    case 15:
+    case 17:
+      return 8.0;
+      break;
     case 18:
     case 11:
     case 13:
-		return 10.0;
-		break;
+      return 10.0;
+      break;
     case 10:
     case 12:
-		return 9.0;
-		break;
-	case 14:
-	case 16:
-		return 7.0;
-		break;
+      return 9.0;
+      break;
+    case 14:
+    case 16:
+      return 7.0;
+      break;
     } 
   }
-	
+  
 }
