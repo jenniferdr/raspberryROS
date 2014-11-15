@@ -145,9 +145,12 @@ namespace AprendizajeQ {
       suma += pow(k , Q[estado][i]); 
     //std::cout << "Hizo suma " << suma << std::endl;
 
-    for(int i = 0 ; i < NUM_ACCION; i++)
+    std::cout << "probabilidades [ " ;
+    for(int i = 0 ; i < NUM_ACCION; i++){
       probabilidad[i] = (pow(k , Q[estado][i]))/suma;
-    //std::cout << "Hizo div " << aux[1] << std::endl;
+      std::cout << probabilidad[i] << ", " ;
+    }
+    std::cout << " ]" << std::endl;
 	
     srand(time(NULL));
 
@@ -157,7 +160,7 @@ namespace AprendizajeQ {
     
     float inf = 0;
     float sup = probabilidad[0];
-    
+    std::cout << "rangos : [" << inf << ", " << sup << "] " ;
     
     for(int i=0; i< NUM_ACCION; i++){
       if(inf<aleatorio<=sup){
@@ -167,7 +170,9 @@ namespace AprendizajeQ {
       
       inf= sup;
       sup= inf + probabilidad[i+1];
+      std::cout << "[" << inf << ", " << sup << "] " ;
     }
+    std::cout << std::endl;
     /*
     //Max de aux
     float max = 0;		
