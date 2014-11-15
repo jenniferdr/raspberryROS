@@ -165,8 +165,8 @@ namespace AprendizajeQ {
 	break;
       }
       
-      inf= inf + probabilidad[i];
-      sup= sup + probabilidad[i+1];
+      inf= sup;
+      sup= inf + probabilidad[i+1];
     }
     /*
     //Max de aux
