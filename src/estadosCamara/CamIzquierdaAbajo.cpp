@@ -46,8 +46,8 @@ bool CamIzquierdaAbajo::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
     int estado = cuadrantePelota();
-    AprendizajeQ::actualizarValor(11);
-    AprendizajeQ::tomarAccion(11);
+    AprendizajeQ::actualizarValor(estado);
+    AprendizajeQ::tomarAccion(estado);
     return true;
 
   } else {
@@ -58,7 +58,7 @@ bool CamIzquierdaAbajo::ubicarPelota(){
 
 }
 
-int CamAbajoMedio::cuadrantePelota(){
+int CamIzquierdaAbajo::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
@@ -67,14 +67,14 @@ int CamAbajoMedio::cuadrantePelota(){
 	  return 14;
   }
 }
-bool CamAbajoMedio::estaEnIzquierda(){
+bool CamIzquierdaAbajo::estaEnIzquierda(){
   
   if (this->posX < verticalIni.x){
     return true;
   }
   return false;
 }
-bool CamAbajoMedio::estaEnDerecha(){
+bool CamIzquierdaAbajo::estaEnDerecha(){
   
   if (this->posX > verticalIni.x){
     return true;
