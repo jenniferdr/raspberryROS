@@ -20,15 +20,28 @@ void CamArribaMedio::mostrarImagen(){
   cv::Size sizeImgOrig = this->imgOriginal.size();
   cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
 
+/* ____________________________________
+ * |       "                    "     | 
+ * |       "                    "     |
+ * |    1->"                2-> "     |
+ * |  3    "                    "     |
+ * |  ^    "                    "     |
+ * |  |    "                    "     |
+ * |""""""""""""""""""""""""""""""""""|
+ * |       "                    "     |
+ * |_______"____________________"_____|
+ */
+  // Linea 1
+  
   // Puntos para seccionar la imagen
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
- 
+  // Linea 2
   verticalIni2 = cvPoint(imgLines.size().width*2/3,0);
   verticalFin2 =
     cvPoint(imgLines.size().width*2/3,imgLines.size().height*5/6);
-
+// Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*5/6);
   horizontalFin =
     cvPoint(imgLines.size().width,imgLines.size().height*5/6);

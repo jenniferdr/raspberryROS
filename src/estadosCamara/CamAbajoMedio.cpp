@@ -24,7 +24,6 @@ void CamAbajoMedio::mostrarImagen(){
 
   // Puntos para seccionar la imagen
 
-  // Linea 1
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
