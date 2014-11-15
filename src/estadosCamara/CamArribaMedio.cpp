@@ -1,6 +1,6 @@
 //Secciones de la camara 
-/* 6 Abajo
- * 7 Arriba
+/* 6 Abajo centro
+ * 7 Arriba centro
  * 8 Izquierda
  * 9 Derecha
 */
@@ -24,16 +24,13 @@ void CamArribaMedio::mostrarImagen(){
  * |       "                    "     | 
  * |       "                    "     |
  * |    1->"                2-> "     |
- * |  3    "                    "     |
- * |  ^    "                    "     |
- * |  |    "                    "     |
- * |""""""""""""""""""""""""""""""""""|
- * |       "                    "     |
- * |_______"____________________"_____|
+ * |        """"""""""""""""""""      |
+ * |       "        ^           "     |
+ * |       "        |           "     |
+ * |_______"________3___________"_____|
  */
-  // Linea 1
-  
   // Puntos para seccionar la imagen
+  // Linea 1
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
@@ -42,9 +39,9 @@ void CamArribaMedio::mostrarImagen(){
   verticalFin2 =
     cvPoint(imgLines.size().width*2/3,imgLines.size().height*5/6);
 // Linea 3
-  horizontalIni = cvPoint(0,imgLines.size().height*5/6);
+  horizontalIni = cvPoint(imgLines.size().width*3/12,imgLines.size().height/2);
   horizontalFin =
-    cvPoint(imgLines.size().width,imgLines.size().height*5/6);
+    cvPoint(imgLines.size().width*2/3,imgLines.size().height/2);
 
 
   // Dibujar division de la pantalla
