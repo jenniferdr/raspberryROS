@@ -154,16 +154,16 @@ namespace AprendizajeQ {
 	
     srand(time(NULL));
 
-    float aleatorio = 0.0; 
-    aleatorio = (float ) rand()/ (float) RAND_MAX ; // Entre [0,1]
+    double aleatorio = 0.0; 
+    aleatorio = (double ) rand()/ (double) RAND_MAX ; // Entre [0,1]
     std::cout << "Aleatorio: " << aleatorio << std::endl;
     
-    float inf = 0;
-    float sup = probabilidad[0];
+    double inf = 0;
+    double sup = probabilidad[0];
     std::cout << "rangos : [" << inf << ", " << sup << "] " ;
     
     for(int i=0; i< NUM_ACCION; i++){
-      if(inf<aleatorio<=sup){
+      if(inf<aleatorio && aleatorio<=sup){
 	accion = i;
 	std::cout << " " << accion << " " ;
 	break;
