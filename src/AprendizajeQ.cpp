@@ -162,7 +162,7 @@ namespace AprendizajeQ {
     float sup = probabilidad[0];
     std::cout << "rangos : [" << inf << ", " << sup << "] " ;
     
-    for(int i=0; i< NUM_ACCION; i++){
+    for(int i=0; i< NUM_ACCION +1 ; i++){
       if(inf<aleatorio<=sup){
 	accion = i;
 	std::cout << " " << accion << " " ;
