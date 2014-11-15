@@ -246,34 +246,41 @@ namespace AprendizajeQ {
     switch (estado){
     case 0: 
     case 1:
-      return 1.0;
-      break;
+		return 1.0;
+		break;
     case 2:
-      return 2.0;
-      break;
+		return 2.0;
+		break;
     case 3:
     case 4:
-      return 3.0;
-      break;
-    case 5:
-      return 6.0;
-      break;
+	case 5:
+		return 3.0;
+		break;
     case 6:
-      return 8.0;
-      break;
+		return 5.0;
+		break;
     case 7:
+		return 6.0;
+		break;
     case 8:
-      return 9.0;
-      break;
     case 9:
-    case 10:
-    case 13:
-      return 10.0;
-      break;
+	case 15:
+	case 17:
+		return 8.0;
+		break;
+    case 18:
     case 11:
+    case 13:
+		return 10.0;
+		break;
+    case 10:
     case 12:
-      return 7.0;
-      break;
+		return 9.0;
+		break;
+	case 14:
+	case 16:
+		return 7.0;
+		break;
     } 
   }
 	

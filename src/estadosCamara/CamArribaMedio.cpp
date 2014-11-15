@@ -1,8 +1,8 @@
 //Secciones de la camara 
-/* 5 Abajo
- * 6 central
- * 7 Izquierda
- * 8 Derecha
+/* 6 Abajo
+ * 7 Arriba
+ * 8 Izquierda
+ * 9 Derecha
 */
 
 #include "CamArribaMedio.hpp"

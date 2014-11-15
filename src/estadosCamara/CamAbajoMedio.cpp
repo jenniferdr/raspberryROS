@@ -1,10 +1,12 @@
 //Secciones de la camara 
 /* 0 Zona de pateo izquierda
  * 1 Zona de pateo derecha
- * 2 central
- * 3 Izquierda
- * 4 Derecha
-*/
+ * 2 Central Abajo
+ * 3 Central Arriba
+ * 4 Izquierda
+ * 5 Derecha
+ */
+
 
 #include "CamAbajoMedio.hpp"
 #include "CamArribaMedio.hpp"
@@ -24,6 +26,20 @@ void CamAbajoMedio::mostrarImagen(){
 
   // Puntos para seccionar la imagen
 
+/* ____________________________________
+ * |       "                    "     | 
+ * |       "                    "     |
+ * |    1->"                2-> "     |
+ * |  3    "                    "     |
+ * |  ^    "                    "     |
+ * |  |    "                    "     |
+ * |""""""""""""""""""""""""""""""""""|
+ * |       "->4     :->5     6<-"     |
+ * |_______"________: __________"_____|
+ */
+  // Linea 1
+
+  
   verticalIni = cvPoint(imgLines.size().width*3/12,0);
   verticalFin =
     cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/6);
