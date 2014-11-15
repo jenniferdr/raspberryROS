@@ -161,23 +161,44 @@ int CamAbajoMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 3; 
+	  return 4; 
+  }else if(estaEnMedioAbajo()){
+	  return 2;
   }else if(estaEnMedioArriba()){
-    return 2;
+	  return 3;
   }else if(estaEnDerecha()){
-    return 4;
+	  return 5;
   }else if(estaEnPateoIzquierda()){
-    return 0;
+	  return 0;
   }else if(estaEnPateoDerecha()){
-    return 1;
+	  return 1;
   }
 }
 
+//Secciones de la camara 
+/* 0 Zona de pateo izquierda
+ * 1 Zona de pateo derecha
+ * 2 Central Abajo
+ * 3 Central Arriba
+ * 4 Izquierda
+ * 5 Derecha
+ */
+bool CamAbajoMedio::estaEnMedioAbajo(){
+
+	if (this->posX > verticalIni.x 
+      && this->posX < verticalIni2.x
+      && this->posY < horizontalIni.y
+	  && this->posY > horizontalini2.y ){
+
+    return true;
+  }
+  return false;
+}
 bool CamAbajoMedio::estaEnMedioArriba(){
   
   if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
-      && this->posY < horizontalIni.y ){
+      && this->posY < horizontalIni2.y){
 
     return true;
   }
