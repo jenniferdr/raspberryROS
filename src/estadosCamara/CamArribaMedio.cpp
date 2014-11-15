@@ -77,13 +77,13 @@ int CamArribaMedio::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
-    return 7; 
+    return 8; 
   }else if(estaEnCentro()){
-    return 6;
+    return 7;
   }else if(estaEnDerecha()){
-    return 8;
+    return 9;
   }else if(estaEnAbajo()){
-    return 5;
+    return 6;
   }
 }
 
