@@ -3,16 +3,16 @@
 
 /*
  * Aprendizaje por Reforzamiento
- * Las recompensas se definen de [0-1]
- * Los Castigos se defien de [0-1]
+ * Las recompensas se definen de [0 a 1]
+ * Los Castigos se definen de [-1 a 0]
  * Las Acciones se definen de la siguiente manera:
  * a0 = caminar poco
  * a1 = caminar
  * a2 = caminar mucho
- * a3 = girar derecha
- * a4 = girar izquierda
- * a5 = girar poco derecha
- * a6 = girar poco izquierda
+ * a3 = girar poco derecha
+ * a4 = girar poco izquierda
+ * a5 = girar derecha
+ * a6 = girar izquierda
  */
 
 #define K 3
