@@ -1,0 +1,149 @@
+El tiempo inicial es: 1h18m9s
+Peticion: r[0m[ INFO] [1416097030.426737121]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416097036.065109099]: Sum: y[0m
+Q[0][-1]: 0
+probabilidades [ 0.135506, 0.135506, 0.135506, 0.135506, 0.135506, 0.135506, 0.186962,  ]
+Aleatorio: 0.0727548
+rangos : [0, 0.135506]  0 
+En el estado 6
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416097043.780408657]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416097043.999321289]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416097048.541734148]: Sum: y[0m
+recompensa fue:0
+maxQ(6): 0.2
+Q[6][0]: 0.14
+probabilidades [ 0.164131, 0.131019, 0.131019, 0.131019, 0.131019, 0.131019, 0.180771,  ]
+Aleatorio: 0.0193742
+rangos : [0, 0.164131]  0 
+En el estado 6
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416097055.523842035]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416097055.729567051]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416097060.508001044]: Sum: y[0m
+recompensa fue:0
+maxQ(6): 0.2
+Q[6][0]: 0.14
+probabilidades [ 0.164131, 0.131019, 0.131019, 0.131019, 0.131019, 0.131019, 0.180771,  ]
+Aleatorio: 0.815026
+rangos : [0, 0.164131] [0.164131, 0.295151] [0.295151, 0.42617] [0.42617, 0.55719] [0.55719, 0.688209] [0.688209, 0.819229]  5 
+En el estado 6
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1416097071.322725438]: Sum: 5[0m
+Peticion: r[0m[ INFO] [1416097071.534402280]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0.2
+maxQ(4): 0.1
+Q[6][5]: 0.27
+Tomar accion con estado 4
+probabilidades [ 0.148244, 0.116448, 0.116448, 0.148244, 0.148244, 0.148244, 0.17413,  ]
+Aleatorio: 0.263203
+rangos : [0, 0.148244] [0.148244, 0.264691]  1 
+En el estado 4
+Hizo elegir accion 1
+Peticion: 1[0m[ INFO] [1416097079.642924399]: Sum: 1[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097079.855109226]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0
+maxQ(4): 0.1
+Q[4][1]: 0.07
+Tomar accion con estado 4
+probabilidades [ 0.141255, 0.1581, 0.110958, 0.141255, 0.141255, 0.141255, 0.165921,  ]
+Aleatorio: 0.487151
+rangos : [0, 0.141255] [0.141255, 0.299355] [0.299355, 0.410313] [0.410313, 0.551569]  3 
+En el estado 4
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1416097087.554286253]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097087.771995920]: Sum: r[0m
+Actualizar valor camAbajMedio estado 4
+recompensa fue:0
+maxQ(4): 0.1
+Q[4][3]: 0.07
+Tomar accion con estado 4
+probabilidades [ 0.138915, 0.155481, 0.10912, 0.155481, 0.138915, 0.138915, 0.163172,  ]
+Aleatorio: 0.856639
+rangos : [0, 0.138915] [0.138915, 0.294396] [0.294396, 0.403516] [0.403516, 0.558997] [0.558997, 0.697912] [0.697912, 0.836828] [0.836828, 1]  6 
+En el estado 4
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1416097099.647358458]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097099.856281381]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:0
+maxQ(3): 0
+Q[4][6]: 0
+Tomar accion con estado 3
+probabilidades [ 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  ]
+Aleatorio: 0.655624
+rangos : [0, 0.142857] [0.142857, 0.285714] [0.285714, 0.428571] [0.428571, 0.571429] [0.571429, 0.714286]  4 
+En el estado 3
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1416097108.154525980]: Sum: 4[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097108.376724516]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:0
+maxQ(3): 0
+Q[3][4]: 0
+Tomar accion con estado 3
+probabilidades [ 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  ]
+Aleatorio: 0.0195626
+rangos : [0, 0.142857]  0 
+En el estado 3
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416097115.305306959]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097115.524798574]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:0
+maxQ(3): 0
+Q[3][0]: 0
+Tomar accion con estado 3
+probabilidades [ 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  ]
+Aleatorio: 0.027643
+rangos : [0, 0.142857]  0 
+En el estado 3
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416097122.570241618]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097122.786623323]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:0
+maxQ(3): 0
+Q[3][0]: 0
+Tomar accion con estado 3
+probabilidades [ 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857, 0.142857,  ]
+Aleatorio: 0.394332
+rangos : [0, 0.142857] [0.142857, 0.285714] [0.285714, 0.428571]  2 
+En el estado 3
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1416097134.395102625]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097134.611444331]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0
+Q[3][2]: 0.1
+Tomar accion con estado 2
+probabilidades [ 0.143826, 0.137046, 0.143826, 0.143826, 0.143826, 0.143826, 0.143826,  ]
+Aleatorio: 0.840229
+rangos : [0, 0.143826] [0.143826, 0.280872] [0.280872, 0.424698] [0.424698, 0.568523] [0.568523, 0.712349] [0.712349, 0.856174]  5 
+En el estado 2
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1416097145.422095842]: Sum: 5[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416097145.635603631]: Sum: r[0m
+Actualizar valor camAbajMedio estado 0
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][5]: 0.8
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][5]: 0.8
+Peticion: e[0m[ INFO] [1416097152.386337247]: Sum: e[0m
+PateoEl tiempo final es: 1h20m12s
