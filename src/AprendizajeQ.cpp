@@ -3,8 +3,8 @@
 
 /*
  * Aprendizaje por Reforzamiento
- * Las recompensas se definen de [0-1]
- * Los Castigos se defien de [0-1]
+ * Las recompensas se definen de [0 a 1]
+ * Los Castigos se definen de [-1 a 0]
  * Las Acciones se definen de la siguiente manera:
  * a0 = caminar poco
  * a1 = caminar
