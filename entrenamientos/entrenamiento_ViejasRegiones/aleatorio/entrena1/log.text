@@ -1,0 +1,191 @@
+Peticion: r[0m[ INFO] [1414882822.265799000]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1414882829.439934054]: Sum: y[0m
+Q[0][-1]: 0
+En el estado 7
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1414882837.661552894]: Sum: 5[0m
+Peticion: r[0m[ INFO] [1414882837.877398668]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1414882842.766688632]: Sum: y[0m
+Peticion: u[0m[ INFO] [1414882848.949091296]: Sum: u[0m
+Peticion: p[0m[ INFO] [1414882854.555683571]: Sum: p[0m
+Peticion: f[0m[ INFO] [1414882861.068630702]: Sum: f[0m
+Peticion: i[0m[ INFO] [1414882867.079549315]: Sum: i[0m
+Peticion: r[0m[ INFO] [1414882873.007606318]: Sum: r[0m
+actualizar valor estado 13
+recompensa fue:-1
+maxQ(13): 0
+Q[7][5]: -1
+Despues de actualizar valor, tomare accion 
+En el estado 13
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1414882881.333063170]: Sum: 4[0m
+Ya tome la accion 
+Peticion: a[0m[ INFO] [1414882881.450093794]: Sum: a[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1414882881.896637913]: Sum: y[0m
+recompensa fue:0.111111
+maxQ(7): 0
+Q[13][4]: 0.111111
+En el estado 7
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1414882890.331208618]: Sum: 4[0m
+Peticion: r[0m[ INFO] [1414882890.545958424]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1414882894.952636314]: Sum: y[0m
+recompensa fue:0.125
+maxQ(6): 0
+Q[7][4]: 0.125
+En el estado 6
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1414882903.947227868]: Sum: 4[0m
+Peticion: r[0m[ INFO] [1414882904.158272780]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1414882908.657262009]: Sum: y[0m
+recompensa fue:-0.8
+maxQ(6): 0
+Q[6][4]: -0.8
+En el estado 6
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1414882915.591519994]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1414882915.810467678]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.5
+maxQ(2): 0
+Q[6][0]: 0.5
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1414882923.919591776]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882924.140537403]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:-0.2
+maxQ(2): 0
+Q[2][6]: -0.2
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1414882931.972045509]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882932.188517265]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:-0.2
+maxQ(2): 0
+Q[2][3]: -0.2
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1414882939.146788560]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882939.359879414]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:-0.2
+maxQ(2): 0
+Q[2][0]: -0.2
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1414882947.214308861]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882947.421654881]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.3
+maxQ(3): 0
+Q[2][3]: -0.3
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1414882955.608146751]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882955.818264691]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.5
+maxQ(2): 0
+Q[3][6]: 0.5
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1414882962.991775780]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882963.223412099]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.3
+maxQ(3): 0.5
+Q[2][0]: -0.25
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 1
+Peticion: 1[0m[ INFO] [1414882971.366356228]: Sum: 1[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882971.570006354]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.3
+maxQ(3): 0.5
+Q[3][1]: -0.25
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1414882978.530635586]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882978.742285481]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.3
+maxQ(3): 0.5
+Q[3][0]: -0.25
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1414882986.975724002]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882987.202805452]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.5
+maxQ(2): 0
+Q[3][6]: 0.5
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1414882995.398723057]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414882995.619007703]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:-0.2
+maxQ(2): 0
+Q[2][6]: -0.2
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1414883003.487231760]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414883003.708509378]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.3
+maxQ(3): 0.5
+Q[2][3]: -0.25
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1414883011.800270988]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414883012.018670689]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.5
+maxQ(2): 0
+Q[3][6]: 0.5
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1414883019.799461270]: Sum: 5[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1414883020.013887085]: Sum: r[0m
+Actualizar valor camAbajMedio estado 0
+recompensa fue:1
+maxQ(0): 1
+Q[2][5]: 1.1
+recompensa fue:1
+maxQ(0): 1
+Q[2][5]: 1.1
+Peticion: e[0m[ INFO] [1414883026.830676471]: Sum: e[0m
+Pateo

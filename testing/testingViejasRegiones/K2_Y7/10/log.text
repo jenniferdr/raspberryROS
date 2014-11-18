@@ -1,0 +1,69 @@
+El tiempo inicial es: 22h25m25s
+Peticion: r[0m[ INFO] [1416000266.692028617]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+Q[0][-1]: 0
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 5
+Peticion: 5[0m[ INFO] [1416000278.503427069]: Sum: 5[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000278.716503961]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.1
+maxQ(3): 0.2032
+Q[2][5]: 0.04224
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1416000290.539575964]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000290.762584569]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0.0722
+Q[3][6]: 0.15054
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 3
+Peticion: 3[0m[ INFO] [1416000298.309021135]: Sum: 3[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000298.529700806]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:-0.1
+maxQ(3): 0.15054
+Q[2][3]: 0.00537799
+Tomar accion con estado 3
+En el estado 3
+Hizo elegir accion 6
+Peticion: 6[0m[ INFO] [1416000310.399701281]: Sum: 6[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000310.613567144]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0.0692
+Q[3][6]: 0.14844
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1416000322.307101576]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000322.524917324]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0
+maxQ(2): 0.0692
+Q[2][2]: 0.04844
+Tomar accion con estado 2
+En el estado 2
+Hizo elegir accion 4
+Peticion: 4[0m[ INFO] [1416000330.673384428]: Sum: 4[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416000330.895420053]: Sum: r[0m
+Actualizar valor camAbajMedio estado 1
+recompensa fue:0.1
+maxQ(1): 1
+Q[2][4]: 0.8
+recompensa fue:0.1
+maxQ(1): 1
+Q[2][4]: 0.8
+Peticion: q[0m[ INFO] [1416000337.222718398]: Sum: q[0m
+PateoEl tiempo final es: 22h26m37s
