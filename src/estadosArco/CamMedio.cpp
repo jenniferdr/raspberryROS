@@ -10,7 +10,9 @@
 
  
 CamMedio::CamMedio(){
-  Arbotix::peticion("y");
+
+  Arbotix::peticion("t");
+
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
   this->enPosicion = false;  
@@ -85,23 +87,23 @@ bool CamMedio::irPosicion(bool &pateoDerecha){
  */ 
 bool CamMedio::ubicarPelota(){
   
-	if (detectorArco::esVisible(this->imgOriginal)){
-		int estado = cuadrantePelota();
-		if ( estado == 1 ){
-			this->enPosicion = true;
-		}else{
-			if (estado == 2)
-				Arbotix::peticion("4"); // Girar a la izquierda
-			if (estado == 3)
-				Arbotix::peticion("3"); // Girar a la derecha
-		}
-		return true;
-
-	} else {
-		std:: cout << " no la vi en camara 1" << std::endl; 
-		CamDerecha siguiente;
-		return siguiente.ubicarPelota();
-	}
+  if (detectorArco::esVisible(this->imgOriginal)){
+    int estado = cuadrantePelota();
+    if ( estado == 1 ){
+      this->enPosicion = true;
+    }else{
+      if (estado == 2)
+	Arbotix::peticion("4"); // Girar a la izquierda
+      if (estado == 3)
+	Arbotix::peticion("3"); // Girar a la derecha
+    }
+    return true;
+    
+  } else {
+    std:: cout << " no la vi en camara 1" << std::endl; 
+    CamDerecha siguiente;
+    return siguiente.ubicarPelota();
+  }
 
 }
 

@@ -8,16 +8,16 @@ namespace detectorArco{
   /* Valor HSV del color */
 
   // Matiz
-  int matizInf = 94;
-  int matizSup = 132; 
+  int matizInf = 40;
+  int matizSup = 124; 
 
   // Saturacion
-  int satInf = 49; 
-  int satSup = 200;
+  int satInf = 68; 
+  int satSup = 185;
 
   // Valor
-  int valInf = 108;
-  int valSup = 255;
+  int valInf = 29;
+  int valSup = 175;
 
   int posX;
   int posY;

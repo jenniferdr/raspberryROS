@@ -9,13 +9,14 @@
  * a0 = caminar poco
  * a1 = caminar
  * a2 = caminar mucho
- * a3 = girar poco derecha
- * a4 = girar poco izquierda
- * a5 = girar derecha
- * a6 = girar izquierda
+ * a3 = girar derecha
+ * a4 = girar izquierda
+ * a5 = girar poco derecha
+ * a6 = girar poco izquierda
  */
 
-#define K 3
+#define K 20
+
 #define Y 0.1
 #define NUM_ESTADOS 19
 #define NUM_ACCION 7
@@ -151,7 +152,8 @@ namespace AprendizajeQ {
       std::cout << probabilidad[i] << ", " ;
     }
     std::cout << " ]" << std::endl;
-	
+
+    /*	
     srand(time(NULL));
 
     double aleatorio = 0.0; 
@@ -174,8 +176,10 @@ namespace AprendizajeQ {
       std::cout << "[" << inf << ", " << sup << "] " ;
     }
     std::cout << std::endl;
-    /*
+
+    */
     //Max de aux
+
     float max = 0;		
     for(int i = 0; i < NUM_ACCION; i++ ){
       if (probabilidad[i] > max){
@@ -183,8 +187,7 @@ namespace AprendizajeQ {
 	accion = i;
       }
     }  
-    */
-    
+
     std::cout << "En el estado " << estado << std::endl;
     std::cout << "Hizo elegir accion " << accion << std::endl;
 

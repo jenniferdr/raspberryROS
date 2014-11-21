@@ -8,7 +8,9 @@
  
 CamDerecha::CamDerecha(){
   // Cambiar posicion de la cámara
-  Arbotix::peticion("o");
+
+  Arbotix::peticion("i");
+
   this->imgOriginal = Camara::obtenerImagen();
   mostrarImagen();
 }
