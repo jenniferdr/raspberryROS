@@ -35,18 +35,20 @@ int main (int argc, char ** argv) {
     std:: cout << "aja ya tengo la pelota ahora el ARCO";
     CamMedio posicion;
     if (posicion.irPosicion(pateoDerecha)){
-      
-      if (pateoDerecha == true) {
-	Arbotix::peticion("q");	
-	
-      } else {
-	Arbotix::peticion("e");
-      }	    
-
-      cout << "Pateo" ;
+		PateoCentro pateo;
+		if (pateo.irPosicion(pateoDerecha)){
+			
+			if (pateoDerecha == true) {
+				Arbotix::peticion("q");	
+				
+			} else {
+				Arbotix::peticion("e");
+			}	    
+		}
+		cout << "Pateo" ;
     }
   } else {
-    cout << "No la vio por ningun lado"; 
+	  cout << "No la vio por ningun lado"; 
     
   }
   

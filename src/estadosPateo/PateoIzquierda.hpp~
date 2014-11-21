@@ -21,31 +21,31 @@
 #include "../Camara.hpp"
 #include "../Arbotix.hpp"
 
-#ifndef H_CamMedio
-#define H_CamMedio
+#ifndef H_PateoDerecha
+#define H_PateoDerecha
 
-class CamMedio{
+class PateoDerecha{
 
 private:
-	bool enPosicion; 
-	cv::Mat imgOriginal;
-	// posicion de la pelota
-	int posX;
-	int posY;
+  bool enPosicion; 
+  cv::Mat imgOriginal;
+  // posicion de la pelota
+  int posX;
+  int posY;
 
-	// Puntos para seccionar imagen
-	// Linea vertical izquierda
-	CvPoint verticalIni;
-	CvPoint verticalFin;
+  // Puntos para seccionar imagen
+  // Linea vertical izquierda
+  CvPoint verticalIni;
+  CvPoint verticalFin;
  
-	// Linea vertical derecha
-	CvPoint verticalIni2;
-	CvPoint verticalFin2;
+  // Linea vertical derecha
+  CvPoint verticalIni2;
+  CvPoint verticalFin2;
 
 public:
   
 
-	CamMedio();
+	PateoDerecha();
 	void mostrarImagen();
 	bool irPosicion(bool &pateoDerecha);
 	// Devuelve true si ubicó la pelota en alguna camara

@@ -8,11 +8,10 @@
  */
 
 
-#include "CamAbajoMedio.hpp"
-#include "CamArribaMedio.hpp"
-#include "../AprendizajeQ.hpp"
+#include "PateoCentro.hpp"
+#include "PateoDerecha.hpp"
 
-CamAbajoMedio::CamAbajoMedio(){
+PateoCentro::PateoCentro(){
 
   Arbotix::peticion("r");  
   this->imgOriginal = Camara::obtenerImagen();
@@ -20,7 +19,7 @@ CamAbajoMedio::CamAbajoMedio(){
   this->enZonaPateo = false;
 }
 
-void CamAbajoMedio::mostrarImagen(){
+void PateoCentro::mostrarImagen(){
   cv::Size sizeImgOrig = this->imgOriginal.size();
   cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
 
@@ -48,16 +47,11 @@ void CamAbajoMedio::mostrarImagen(){
   verticalFin2 =
     cvPoint(imgLines.size().width*9/12,imgLines.size().height*5/6);
 
-  // Linea 3
-  horizontalIni = cvPoint(0,imgLines.size().height*7/9);
-  horizontalFin =
-    cvPoint(imgLines.size().width,imgLines.size().height*7/9);
-/*
 // Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*5/6);
   horizontalFin =
 	  cvPoint(imgLines.size().width,imgLines.size().height*5/6);
-*/
+
   // Linea 4
   verticalIni3 = 
     cvPoint(imgLines.size().width*3/12,imgLines.size().height*5/6);
@@ -78,16 +72,11 @@ void CamAbajoMedio::mostrarImagen(){
 
   // Linea 7
   horizontalIni2 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/9);
   horizontalFin2 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*5/9);
 
-  // Linea 8
-  horizontalIni3 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*7/9);
-  horizontalFin3 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*7/9);
-
+ 
   
   // Dibujar division de la pantalla
   line(imgLines, horizontalIni, horizontalFin, cvScalar(0,255,0), 1);
@@ -106,7 +95,7 @@ void CamAbajoMedio::mostrarImagen(){
 
 }
 
-bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
+bool PateoCentro::irZonaPateo(bool &pateoDerecha){
   int maxGiros = 5; // Numero de veces a girar sin ver la pelota
   int vuelta = 1;
 
@@ -115,7 +104,7 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
     if(pelotaAlaVista && this->enZonaPateo){
       // Llegamos a la meta, tomar recompensa
       int estado = pateoDerecha ? 1 : 0 ;
-      AprendizajeQ::actualizarValor(estado);
+      
       return true;
     }
 
@@ -127,11 +116,9 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
       vuelta++;
       // Estado 13: no la vió
       std::cout << "actualizar valor estado 13" << std::endl;
-      AprendizajeQ::actualizarValor(13);
-      std::cout << "Despues de actualizar valor, tomare accion " << std::endl;
-      AprendizajeQ::tomarAccion(13);
-      std::cout << "Ya tome la accion "<< std::endl;
-      Arbotix:: peticion("a");
+      
+      
+      Arbotix:: peticion("3"); // girar a la derecha
     }
   }
 
@@ -144,33 +131,37 @@ bool CamAbajoMedio::irZonaPateo(bool &pateoDerecha){
  * Devuelve false si no la vio en ninguna posicion
  * de camara
  */ 
-bool CamAbajoMedio::ubicarPelota(bool &pateoDerecha){
+bool PateoCentro::ubicarPelota(bool &pateoDerecha){
   this->enZonaPateo = false;
   if (detectorPelota::esVisible(this->imgOriginal)){
     int estado = cuadrantePelota();
-    
-    std::cout << "Actualizar valor camAbajMedio estado " << estado << std::endl;
-    AprendizajeQ::actualizarValor(estado);
-    if (estado == 0 or estado == 1){
-      this->enZonaPateo = true;
-      if(estado==0) pateoDerecha = false;
-      if(estado==1) pateoDerecha = true;
-    }else{
-      std::cout << "Tomar accion con estado " << estado << std::endl;
-      AprendizajeQ::tomarAccion(estado);
-      std::cout << "Ya tome la accion" << std::endl;
-    }
-    return true;
+	if (estado == 0 or estado == 1){
+		this->enZonaPateo = true;
+		if(estado==0) pateoDerecha = false;
+		if(estado==1) pateoDerecha = true;
+		else {
+			if (estado == 2)
+				Arbotix::peticion("0");
+			if (estado == 3)
+				Arbotix::peticion("0");
+			if(estado == 4)
+				Arbotix::peticion("4");
+			if(estado == 5)
+				Arbotix::peticion("3");
+			
+		}
+		return true;
+		
+	} else {
 
-  } else {
-    std:: cout << " no la vi en camara 1" << std::endl; 
-    CamArribaMedio cam_arriba_medio;
-    return cam_arriba_medio.ubicarPelota();
+	   std:: cout << " no la vi en camara 1" << std::endl; 
+		PateoDerecha siguiente;
+		return siguiente.ubicarPelota();
+	}
+	
   }
 
-}
-
-int CamAbajoMedio::cuadrantePelota(){
+int PateoCentro::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
@@ -188,7 +179,7 @@ int CamAbajoMedio::cuadrantePelota(){
   }
 }
 
-bool CamAbajoMedio::estaEnMedioAbajo(){
+bool PateoCentro::estaEnMedioAbajo(){
 
 	if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
@@ -199,7 +190,7 @@ bool CamAbajoMedio::estaEnMedioAbajo(){
   }
   return false;
 }
-bool CamAbajoMedio::estaEnMedioArriba(){
+bool PateoCentro::estaEnMedioArriba(){
   
   if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
@@ -210,7 +201,7 @@ bool CamAbajoMedio::estaEnMedioArriba(){
   return false;
 }
 
-bool CamAbajoMedio::estaEnDerecha(){
+bool PateoCentro::estaEnDerecha(){
   
   if (this->posX > verticalIni2.x){
     return true;
@@ -218,7 +209,7 @@ bool CamAbajoMedio::estaEnDerecha(){
   return false;
 }
 
-bool CamAbajoMedio::estaEnIzquierda(){
+bool PateoCentro::estaEnIzquierda(){
   
   if (this->posX < verticalIni.x){
     return true;
@@ -226,31 +217,24 @@ bool CamAbajoMedio::estaEnIzquierda(){
   return false;
 }
 
-bool CamAbajoMedio::estaEnPateoIzquierda(){
+bool PateoCentro::estaEnPateoIzquierda(){
   
   if (this->posX > verticalIni3.x 
       && this->posX < verticalIni4.x
-      && this->posY > horizontalIni.y
-	  && this->posY < horizontalIni3.y){
+					  && this->posY > horizontalIni.y ){
 
     return true;
   }
   return false;
 }
 
-bool CamAbajoMedio::estaEnPateoDerecha(){
+bool PateoCentro::estaEnPateoDerecha(){
   
   if (this->posX > verticalIni4.x 
       && this->posX < verticalIni5.x
       && this->posY > horizontalIni.y 
-	  && this->posY < horizontalIni3.y){
+	  ){
     return true;
   }
   return false;
 }
-
-
-
-
-
-

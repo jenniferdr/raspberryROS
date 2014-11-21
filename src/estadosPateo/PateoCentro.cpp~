@@ -48,16 +48,13 @@ void CamAbajoMedio::mostrarImagen(){
   verticalFin2 =
     cvPoint(imgLines.size().width*9/12,imgLines.size().height*5/6);
 
-  // Linea 3
-  horizontalIni = cvPoint(0,imgLines.size().height*7/9);
-  horizontalFin =
-    cvPoint(imgLines.size().width,imgLines.size().height*7/9);
-/*
+  
+
 // Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*5/6);
   horizontalFin =
 	  cvPoint(imgLines.size().width,imgLines.size().height*5/6);
-*/
+
   // Linea 4
   verticalIni3 = 
     cvPoint(imgLines.size().width*3/12,imgLines.size().height*5/6);
@@ -78,16 +75,11 @@ void CamAbajoMedio::mostrarImagen(){
 
   // Linea 7
   horizontalIni2 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*5/9);
   horizontalFin2 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*5/9);
 
-  // Linea 8
-  horizontalIni3 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*7/9);
-  horizontalFin3 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*7/9);
-
+ 
   
   // Dibujar division de la pantalla
   line(imgLines, horizontalIni, horizontalFin, cvScalar(0,255,0), 1);
@@ -248,9 +240,3 @@ bool CamAbajoMedio::estaEnPateoDerecha(){
   }
   return false;
 }
-
-
-
-
-
-
