@@ -17,7 +17,7 @@
 #include "rosserial_arduino/Test.h"
 #include <cstdlib>
 
-#include "../detectorArco.hpp"
+#include "../detectorPelota.hpp"
 #include "../Camara.hpp"
 #include "../Arbotix.hpp"
 

@@ -50,7 +50,7 @@ public:
 	bool irPosicion(bool &pateoDerecha);
 	// Devuelve true si ubicó la pelota en alguna camara
 	// Devuelve false si no la vio en ninguna camara 
-	bool ubicarPelota();
+	bool ubicarPelota(bool &pateoDerecha);
 
 	int cuadrantePelota();
 	

@@ -45,19 +45,29 @@ cv::Size sizeImgOrig = this->imgOriginal.size();
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamDerecha::ubicarPelota(){
+bool CamDerecha::ubicarPelota(bool &pateoDerecha){
 
   if (detectorArco::esVisible(this->imgOriginal)){
 	  int estado = cuadrantePelota();
-	  if (estado == 4)
-		  Arbotix::peticion("5");
-	  if (estado == 5)
-		  Arbotix::peticion("3");
+	  if (estado == 4){
+	  // if (pateoDerecha)
+	  //    Arbotix::peticion("3");
+		    //else
+	      Arbotix::peticion("3");
+
+	  
+	  }else if (estado == 5){
+	    //  if (pateoDerecha)
+	    //Arbotix::peticion("5");
+	    //else 
+	      Arbotix::peticion("3");
+
+	  }
 	  return true;
 
   } else {
 	  CamIzquierda camSiguiente;
-	  return camSiguiente.ubicarPelota();
+	  return camSiguiente.ubicarPelota(pateoDerecha);
 	  
   }
 }

@@ -139,15 +139,15 @@ bool PateoCentro::ubicarPelota(bool &pateoDerecha){
 		this->enZonaPateo = true;
 		if(estado==0) pateoDerecha = false;
 		if(estado==1) pateoDerecha = true;
-		else {
-			if (estado == 2)
-				Arbotix::peticion("0");
-			if (estado == 3)
-				Arbotix::peticion("0");
-			if(estado == 4)
-				Arbotix::peticion("4");
-			if(estado == 5)
-				Arbotix::peticion("3");
+	}else {
+		if (estado == 2)
+			Arbotix::peticion("0");
+		if (estado == 3)
+			Arbotix::peticion("0");
+		if(estado == 4)
+			Arbotix::peticion("4");
+		if(estado == 5)
+			Arbotix::peticion("3");
 			
 		}
 		return true;

@@ -56,11 +56,11 @@ void CamMedio::mostrarImagen(){
 }
 
 bool CamMedio::irPosicion(bool &pateoDerecha){
-  int maxGiros = 10; // Numero de veces a girar sin ver la pelota
+  int maxGiros = 5; // Numero de veces a girar sin ver la pelota
   int vuelta = 1;
 
   while(vuelta < maxGiros){
-    bool ArcoAlaVista = ubicarPelota();
+    bool ArcoAlaVista = ubicarPelota(pateoDerecha);
     if(ArcoAlaVista && this->enPosicion)return true;
 
     Arbotix::peticion("y"); // Mover camara medio
@@ -85,24 +85,35 @@ bool CamMedio::irPosicion(bool &pateoDerecha){
  * Devuelve false si no la vio en ninguna posicion
  * de camara
  */ 
-bool CamMedio::ubicarPelota(){
+bool CamMedio::ubicarPelota(bool &pateoDerecha){
   
   if (detectorArco::esVisible(this->imgOriginal)){
     int estado = cuadrantePelota();
     if ( estado == 1 ){
       this->enPosicion = true;
     }else{
-      if (estado == 2)
-	Arbotix::peticion("4"); // Girar a la izquierda
-      if (estado == 3)
-	Arbotix::peticion("3"); // Girar a la derecha
+      if (estado == 2){
+	//	if (pateoDerecha)
+	// Arbotix::peticion("3"); // Girar a la derecha
+	//	else
+	  Arbotix::peticion("4"); // Girar a la izquierda
+	  
+
+      }	
+      if (estado == 3){
+	//if(pateoDerecha)
+	//Arbotix::peticion("3"); // Girar a la derecha
+	  //else 
+	  Arbotix::peticion("3"); // Girar a la derecha
+      	  
+      }
     }
     return true;
     
   } else {
     std:: cout << " no la vi en camara 1" << std::endl; 
     CamDerecha siguiente;
-    return siguiente.ubicarPelota();
+    return siguiente.ubicarPelota(pateoDerecha);
   }
 
 }

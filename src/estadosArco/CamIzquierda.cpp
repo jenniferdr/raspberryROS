@@ -45,20 +45,29 @@ void CamIzquierda::mostrarImagen(){
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamIzquierda::ubicarPelota(){
+bool CamIzquierda::ubicarPelota(bool &pateoDerecha){
 
   if (detectorArco::esVisible(this->imgOriginal)){
 	  int estado = cuadrantePelota();
-	  if (estado == 6)
-		  Arbotix::peticion("4");
-	  if (estado == 7)
-		  Arbotix::peticion("6");
-	  return true;
+	  if (estado == 6){
+	    //   if (pateoDerecha)
+	    //Arbotix::peticion("5");
+	    //else 
+	      Arbotix::peticion("4");
 
-  } else {
-	  // ultima camara
-	  return false;
+	  }else if (estado == 7){
+	    //if(pateoDerecha)
+	    //Arbotix::peticion("3");
+	    //else
+	      Arbotix::peticion("4");
+
+	  }
+	  return true;
 	  
+  } else {
+    // ultima camara
+    return false;
+    
   }
 }
 int CamIzquierda::cuadrantePelota(){

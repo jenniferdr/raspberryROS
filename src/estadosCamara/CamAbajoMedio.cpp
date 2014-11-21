@@ -47,17 +47,17 @@ void CamAbajoMedio::mostrarImagen(){
   verticalIni2 = cvPoint(imgLines.size().width*9/12,0);
   verticalFin2 =
     cvPoint(imgLines.size().width*9/12,imgLines.size().height*5/6);
-
+  /*
   // Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*7/9);
   horizontalFin =
     cvPoint(imgLines.size().width,imgLines.size().height*7/9);
-/*
+  */
 // Linea 3
   horizontalIni = cvPoint(0,imgLines.size().height*5/6);
   horizontalFin =
-	  cvPoint(imgLines.size().width,imgLines.size().height*5/6);
-*/
+    cvPoint(imgLines.size().width,imgLines.size().height*5/6);
+
   // Linea 4
   verticalIni3 = 
     cvPoint(imgLines.size().width*3/12,imgLines.size().height*5/6);
@@ -78,21 +78,21 @@ void CamAbajoMedio::mostrarImagen(){
 
   // Linea 7
   horizontalIni2 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*4/9);
   horizontalFin2 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*0.84);
+    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*4/9);
 
   // Linea 8
   horizontalIni3 = 
-    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*7/9);
+    cvPoint(imgLines.size().width*3/12,(imgLines.size().height)*8/11);
   horizontalFin3 =
-    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*7/9);
+    cvPoint(imgLines.size().width*9/12, (imgLines.size().height)*8/11);
 
   
   // Dibujar division de la pantalla
   line(imgLines, horizontalIni, horizontalFin, cvScalar(0,255,0), 1);
   line(imgLines, horizontalIni2, horizontalFin2, cvScalar(0,255,0), 1);
-   line(imgLines, horizontalIni3, horizontalFin3, cvScalar(0,255,0), 1);
+  line(imgLines, horizontalIni3, horizontalFin3, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni, verticalFin, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni2, verticalFin2, cvScalar(0,255,0), 1);
   line(imgLines, verticalIni3, verticalFin3, cvScalar(0,255,0), 1);
@@ -192,7 +192,7 @@ bool CamAbajoMedio::estaEnMedioAbajo(){
 
 	if (this->posX > verticalIni.x 
       && this->posX < verticalIni2.x
-      && this->posY < horizontalIni.y
+      && this->posY < horizontalIni3.y
 	  && this->posY > horizontalIni2.y ){
 
     return true;
@@ -230,8 +230,8 @@ bool CamAbajoMedio::estaEnPateoIzquierda(){
   
   if (this->posX > verticalIni3.x 
       && this->posX < verticalIni4.x
-      && this->posY > horizontalIni.y
-	  && this->posY < horizontalIni3.y){
+      && this->posY > horizontalIni3.y
+	  && this->posY < horizontalIni.y){
 
     return true;
   }
@@ -242,8 +242,8 @@ bool CamAbajoMedio::estaEnPateoDerecha(){
   
   if (this->posX > verticalIni4.x 
       && this->posX < verticalIni5.x
-      && this->posY > horizontalIni.y 
-	  && this->posY < horizontalIni3.y){
+      && this->posY > horizontalIni3.y 
+	  && this->posY < horizontalIni.y){
     return true;
   }
   return false;

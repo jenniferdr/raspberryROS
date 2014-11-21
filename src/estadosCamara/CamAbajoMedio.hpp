@@ -58,6 +58,10 @@ private:
   CvPoint horizontalIni2;
   CvPoint horizontalFin2;
 
+  CvPoint horizontalIni3;
+  CvPoint horizontalFin3;
+
+
   // linea vertical area de pateo
   CvPoint verticalIni3;
   CvPoint verticalFin3;

@@ -6,6 +6,8 @@
 #include "AprendizajeQ.hpp"
 #include "estadosCamara/CamAbajoMedio.hpp"
 #include "estadosArco/CamMedio.hpp"
+#include "estadosPateo/PateoCentro.hpp"
+
 #include <ctime>
 using namespace cv;
 using namespace std;
@@ -27,40 +29,47 @@ int main (int argc, char ** argv) {
   Camara::iniciarCamara();
   //inicializar valores Q
   AprendizajeQ::leerValores();
+  int counter = 0;
+  
 
-  CamAbajoMedio pitazo;
-  bool pateoDerecha;
-  if (pitazo.irZonaPateo(pateoDerecha)){
-    
-    std:: cout << "aja ya tengo la pelota ahora el ARCO";
-    CamMedio posicion;
-    if (posicion.irPosicion(pateoDerecha)){
-		PateoCentro pateo;
-		if (pateo.irPosicion(pateoDerecha)){
-			
-			if (pateoDerecha == true) {
-				Arbotix::peticion("q");	
-				
-			} else {
-				Arbotix::peticion("e");
-			}	    
-		}
-		cout << "Pateo" ;
-    }
-  } else {
+    CamAbajoMedio pitazo;
+    bool pateoDerecha;
+   
+      if (pitazo.irZonaPateo(pateoDerecha)){
+	
+	std:: cout << "aja ya tengo la pelota ahora el ARCO";
+	
+	CamMedio posicion;
+	if (posicion.irPosicion(pateoDerecha)){
+	  PateoCentro pateo;
+	  pateoDerecha = false;
+	  if (pateo.irZonaPateo(pateoDerecha)){
+	    
+	    if (pateoDerecha == true) {
+	      Arbotix::peticion("q");	
+
+	    } else {
+	      Arbotix::peticion("e");
+	    }	    
+	  }
+	  cout << "Pateo" ; 
+	} else {
 	  cout << "No la vio por ningun lado"; 
+	  
+	}
+	counter ++;   
+      }
+      
+
+    //respaldar valores Q en archivo
+    AprendizajeQ::escribirValores();
+    ahora = time(0);
+    t = localtime(&ahora);
+    std::cout << "El tiempo final es: "<< 1+ t->tm_hour << "h" << 1 + t->tm_min << "m" << t->tm_sec<< "s" << std::endl;
     
-  }
-  
-  //respaldar valores Q en archivo
-  AprendizajeQ::escribirValores();
-  ahora = time(0);
-  t = localtime(&ahora);
-  std::cout << "El tiempo final es: "<< 1+ t->tm_hour << "h" << 1 + t->tm_min << "m" << t->tm_sec<< "s" << std::endl;
-  
-  
-  return 0;
-  
+    
+    return 0;
+    
 }
 
 

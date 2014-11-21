@@ -6,7 +6,7 @@
  * 7 Derecha
 */
  
-CamIzquierda::CamIzquierda(){
+PateoIzquierda::PateoIzquierda(){
   // Cambiar posicion de la cámara
 
   Arbotix::peticion("e");
@@ -15,7 +15,7 @@ CamIzquierda::CamIzquierda(){
   mostrarImagen();
 }
 
-void CamIzquierda::mostrarImagen(){
+void PateoIzquierda::mostrarImagen(){
 	cv::Size sizeImgOrig = this->imgOriginal.size();
 	cv::Mat imgLines = cv::Mat::zeros(  sizeImgOrig , CV_8UC3 );
 
@@ -45,7 +45,7 @@ void CamIzquierda::mostrarImagen(){
 
 // Devuelve true si ubicó la pelota en alguna camara
 // Devuelve false si no la vio en ninguna camara 
-bool CamIzquierda::ubicarPelota(){
+bool PateoIzquierda::ubicarPelota(){
 
   if (detectorPelota::esVisible(this->imgOriginal)){
 	  int estado = cuadrantePelota();
@@ -61,7 +61,7 @@ bool CamIzquierda::ubicarPelota(){
 	  
   }
 }
-int CamIzquierda::cuadrantePelota(){
+int PateoIzquierda::cuadrantePelota(){
   detectorPelota::obtenerPosicion(this->posX,this->posY);
 
   if (estaEnIzquierda()){
@@ -72,7 +72,7 @@ int CamIzquierda::cuadrantePelota(){
 }
 
 
-bool CamIzquierda::estaEnDerecha(){
+bool PateoIzquierda::estaEnDerecha(){
   
   if (this->posX > verticalIni.x){
     return true;
@@ -80,7 +80,7 @@ bool CamIzquierda::estaEnDerecha(){
   return false;
 }
 
-bool CamIzquierda::estaEnIzquierda(){
+bool PateoIzquierda::estaEnIzquierda(){
   
   if (this->posX < verticalIni.x){
     return true;
