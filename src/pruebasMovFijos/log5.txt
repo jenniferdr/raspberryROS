@@ -1,0 +1,113 @@
+El tiempo inicial es: 24h58m44s
+Peticion: r[0m[ INFO] [1416873465.274058228]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873471.150720848]: Sum: y[0m
+Q[0][-1]: 0
+probabilidades [ 0.4448, 0.0153854, 0.1801, 0.179615, 3.00495e-14, 0.1801, 3.00495e-14,  ]
+En el estado 7
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873478.978827892]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416873479.204686344]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873483.887664575]: Sum: y[0m
+recompensa fue:0
+maxQ(7): 0.123
+Q[7][0]: 0.0123
+probabilidades [ 0.365092, 0.0175942, 0.205956, 0.205402, 3.43636e-14, 0.205956, 3.43636e-14,  ]
+En el estado 7
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873490.984321831]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416873491.208072344]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873495.988112765]: Sum: y[0m
+recompensa fue:0
+maxQ(7): 0.0123
+Q[7][0]: 0.00123
+probabilidades [ 0.357439, 0.0178062, 0.208439, 0.207877, 3.47778e-14, 0.208439, 3.47778e-14,  ]
+En el estado 7
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873502.889619683]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416873503.107393370]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873507.690483503]: Sum: y[0m
+recompensa fue:0
+maxQ(7): 0.00123
+Q[7][0]: 0.000123
+probabilidades [ 0.356678, 0.0178273, 0.208685, 0.208124, 3.4819e-14, 0.208685, 3.4819e-14,  ]
+En el estado 7
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873514.982160115]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416873515.198080855]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873519.774407187]: Sum: y[0m
+recompensa fue:0
+maxQ(7): 0.000123
+Q[7][0]: 1.23e-05
+probabilidades [ 0.356602, 0.0178294, 0.20871, 0.208148, 3.48231e-14, 0.20871, 3.48231e-14,  ]
+En el estado 7
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873527.143708554]: Sum: 0[0m
+Peticion: r[0m[ INFO] [1416873527.362281217]: Sum: r[0m
+ no la vi en camara 1
+Peticion: y[0m[ INFO] [1416873531.974999498]: Sum: y[0m
+recompensa fue:0.1
+maxQ(6): 0.2012
+Q[7][0]: 0.12012
+probabilidades [ 0.00757928, 0.161525, 0.276965, 0.276965, 1.48033e-14, 0.276965, 1.48033e-14,  ]
+En el estado 6
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1416873543.549468967]: Sum: 2[0m
+Peticion: r[0m[ INFO] [1416873543.765283711]: Sum: r[0m
+Actualizar valor camAbajMedio estado 3
+recompensa fue:0.2
+maxQ(3): 0.12
+Q[6][2]: 0.212
+Tomar accion con estado 3
+probabilidades [ 0.184248, 0.184248, 0.263006, 0.184248, 0.184248, 1.79284e-14, 1.79284e-14,  ]
+En el estado 3
+Hizo elegir accion 2
+Peticion: 2[0m[ INFO] [1416873555.460311693]: Sum: 2[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416873555.674081496]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0.1
+maxQ(2): 0.2
+Q[3][2]: 0.12
+Tomar accion con estado 2
+probabilidades [ 0.388357, 0.226488, 2.08317e-14, 0.158666, 0.226488, 2.08317e-14, 2.08317e-14,  ]
+En el estado 2
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873563.008046902]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416873563.223922644]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0
+maxQ(2): 0.2
+Q[2][0]: 0.02
+Tomar accion con estado 2
+probabilidades [ 0.27023, 0.27023, 2.4855e-14, 0.189309, 0.27023, 2.4855e-14, 2.4855e-14,  ]
+En el estado 2
+Hizo elegir accion 0
+Peticion: 0[0m[ INFO] [1416873570.593319025]: Sum: 0[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416873570.803060945]: Sum: r[0m
+Actualizar valor camAbajMedio estado 2
+recompensa fue:0
+maxQ(2): 0.02
+Q[2][0]: 0.002
+Tomar accion con estado 2
+probabilidades [ 0.259729, 0.274119, 2.52126e-14, 0.192033, 0.274119, 2.52126e-14, 2.52126e-14,  ]
+En el estado 2
+Hizo elegir accion 1
+Peticion: 1[0m[ INFO] [1416873578.988750668]: Sum: 1[0m
+Ya tome la accion
+Peticion: r[0m[ INFO] [1416873579.213990139]: Sum: r[0m
+Actualizar valor camAbajMedio estado 0
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][1]: 0.2
+recompensa fue:0.1
+maxQ(0): 1
+Q[2][1]: 0.2
+aja ya tengo la pelota ahora el ARCOPeticion: e[0m[ INFO] [1416873586.148633129]: Sum: e[0m
+PateoEl tiempo final es: 24h60m46s

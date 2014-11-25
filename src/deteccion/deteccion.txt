@@ -1,0 +1,152 @@
+El tiempo inicial es: 5h24m31s
+Peticion: o[0m[ INFO] [1416889412.374474346]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889412.629711934]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889412.847219617]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889418.420428772]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889418.647046192]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889418.856644105]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889423.955014049]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889424.212269578]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889424.479590815]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889429.296386935]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889429.521540397]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889429.741936997]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889434.429088881]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889434.637407832]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889434.853091568]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889439.556414983]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889439.767910841]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889439.985827513]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889444.924674087]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889445.192240317]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889445.426415517]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889449.648386909]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889449.875259321]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889450.094439955]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889454.680468775]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889454.904918257]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889455.130490706]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889458.751136561]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889458.969964206]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889459.186583915]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889462.822083338]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889463.042168947]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889463.260926594]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889466.889701212]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889467.113290719]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889467.335059278]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889470.935971705]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889471.152000431]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889471.378075866]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889474.994030856]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889475.214575451]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889475.439770911]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889479.073092396]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889479.284207265]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889479.505073851]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889483.115421003]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889483.354580058]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889483.604968786]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889487.216148914]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889487.443030325]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889487.665405867]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889491.285633731]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889491.506186326]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889491.729983827]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889495.364164286]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889495.585893847]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889495.809374357]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889499.451846575]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889499.675405082]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889499.893765741]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889503.501115979]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889503.726018447]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889503.955364787]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889507.554663258]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889507.774894862]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889507.985471747]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889511.563912824]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889511.776614647]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889511.997420234]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889515.599539623]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889515.818196273]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889516.037207913]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889519.635279419]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889519.853354086]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889520.063696977]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889523.675457085]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889523.891006826]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889524.098918787]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889527.729537348]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889527.953007858]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889528.164612713]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889531.775938833]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889532.006415140]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889532.225728771]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889535.834836955]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889536.056066530]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889536.266724413]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889539.925291161]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889540.149522649]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889540.377348032]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889543.984200282]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889544.204348888]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889544.439790051]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889548.080239325]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889548.297921003]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889548.518785588]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889552.114729154]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889552.334020786]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889552.556343329]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889556.169243402]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889556.391306953]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889556.607854664]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889560.232637392]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889560.455927908]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889560.668249741]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889564.297707333]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889564.527350664]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889564.742918403]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889568.370969036]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889568.574368129]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889568.796502678]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889572.428032209]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889572.645520893]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889572.866988461]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889576.501393908]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889576.726524370]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889576.949868884]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889580.548502370]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889580.765749061]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889580.983507736]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889584.584461155]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889584.814594471]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889585.034313090]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889588.640337361]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889588.845167413]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889589.063106083]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889592.667689396]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889592.884002114]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889593.093126040]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889596.714077877]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889596.938953346]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889597.166726731]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889600.784420663]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889601.001865348]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889601.215578141]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889604.826170279]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889605.049292798]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889605.268586429]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889608.882891459]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889609.092886360]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889609.315219903]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889612.887960140]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889613.103629876]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889613.328375349]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889616.934799607]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889617.145447489]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889617.367690034]: Sum: y[0m
+si vi pelotaPeticion: o[0m[ INFO] [1416889620.989700839]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889621.236306677]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889621.461104148]: Sum: y[0m
+si vi pelotaEl tiempo final es: 5h28m4s

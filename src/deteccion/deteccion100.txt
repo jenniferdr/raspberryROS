@@ -1,0 +1,152 @@
+El tiempo inicial es: 5h30m36s
+Peticion: o[0m[ INFO] [1416889777.763126454]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889778.006921373]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889778.224092065]: Sum: y[0m
+no vi pelotaPeticion: o[0m[ INFO] [1416889783.855391501]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889784.098753432]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889784.342184362]: Sum: y[0m
+no vi pelotaPeticion: o[0m[ INFO] [1416889788.379715089]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889788.605036545]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889788.817090386]: Sum: y[0m
+no vi pelotaPeticion: o[0m[ INFO] [1416889792.886860177]: Sum: o[0m
+Peticion: g[0m[ INFO] [1416889793.115867525]: Sum: g[0m
+Peticion: y[0m[ INFO] [1416889793.333800195]: Sum: y[0m
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaPeticion: o false
+Peticion: g false
+Peticion: y false
+no vi pelotaEl tiempo final es: 5h33m59s
